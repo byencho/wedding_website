@@ -1,0 +1,97 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* Reset                        */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* reset.css */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin:0;
+  padding:0;
+  border:0;
+  outline: 0;
+  background: transparent;
+  vertical-align:baseline;
+  font-size:100%;
+  font-weight:inherit;
+  font-style:inherit;
+  font-family:inherit;
+  }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+  }
+body {
+  line-height: 1;
+  }
+ol, ul {
+  list-style: none;
+  }
+blockquote, q {
+  quotes: none;
+  }
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+  }
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  }
+
+.coming-soon {
+  background: url("bg_layer_1_a.png") 50% 0 repeat fixed; min-height: 2000px;
+  height: 1000px; 
+  margin: 0 auto; 
+  width: 100%;
+  position: relative;
+}
+
+.coming-soon .layer-2 {
+  background: url("bg_layer_2.png") 50% 0 repeat fixed; min-height: 2000px;
+  margin: 0 auto; 
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.coming-soon .layer-3 {
+  background: url("bg_layer_3.png") 50% 0 repeat fixed; min-height: 2000px;
+  margin: 0 auto; 
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.coming-soon .header {
+  position: fixed;
+  margin: 50px auto 0 auto;
+  height: 100%;
+  width: 100%;
+
+  .title {
+    background-image: url("sandra_and_brian_test.png");
+    background-size: auto 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+    height: 75%;
+    width: 100%;
+  }
+
+  p {
+    color: #FFEFAD;
+    font-size: 20pt;
+    text-align: center;
+    font-style: italic;
+  }
+
+}
+
