@@ -48,6 +48,7 @@ table {
 // Scrolling Background //
 
 .main {
+  font-family: Arial, Helvetica, sans-serif;
   background: url("bg_layer_1_a.png") 50% 0 repeat fixed; min-height: 2000px;
   height: 1000px; 
   margin: 0 auto;
@@ -128,6 +129,14 @@ table {
   padding: 30px 0 10px 0;
   font-size: 35pt;
   font-weight: bold;
+
+  // TESTING
+  height: 50px;
+  font-size: 0pt;
+  background-image: url("header_santa_fe.png");
+  background-size: auto 50px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .main .header .details {
@@ -183,6 +192,7 @@ table {
 }
 
 .main .dropdown-nav ul li {
+  text-transform:lowercase;
   margin: 10px 0 10px 0;
 }
 
@@ -228,6 +238,7 @@ table {
 }
 
 .main .nav-bar ul li {
+  text-transform:lowercase;
   margin: 10px 0 10px 0;
 }
 
@@ -411,6 +422,12 @@ table {
   .main .header .title {
     padding: 5px 0 5px 0;
     font-size: 25pt;
+
+    // TESTING
+    font-size: 0px;
+    height: 25px;
+    background-size: auto 25px;
+
   }
 
   .main .header .details {
@@ -452,6 +469,11 @@ table {
   .main .header .title {
     padding: 5px 0 5px 0;
     font-size: 20pt;
+
+    // TESTING
+    height: 20px;
+    font-size: 0px;
+    background-size: auto 20px;
   }
 
   .main .header .details {
