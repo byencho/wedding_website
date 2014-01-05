@@ -1,9 +1,15 @@
 WeddingWebsite::Application.routes.draw do
 
-  resource :home, controller: :home, only: [:show]
-
-  resource :accommodations, only: [:show]
+  resource :accommodations, controller: :accommodations, only: [:show]
   resource :coming_soon, controller: :coming_soon, only: [:show]
+  resource :directions, controller: :directions, only: [:show]
+  resource :faq, controller: :faq, only: [:show]
+  resource :guest_book, controller: :guest_book, only: [:show]  
+  resource :home, controller: :home, only: [:show]
+  resource :recommendations, controller: :recommendations, only: [:show]
+  resource :registry, controller: :registry, only: [:show]  
+  resource :rsvp, controller: :rsvp, only: [:show]
+  resource :schedule, controller: :schedule, only: [:show]
 
   #root to:  'home#coming_soon'
   root to: 'home#show'

@@ -137,11 +137,6 @@ table {
   //padding: 0px;
 }
 
-.main .main-content {
-  padding-top: 200px;
-  //display: block;
-}
-
 .main .nav-bar {
   position: relative;
   float: left;
@@ -159,32 +154,43 @@ table {
   min-height: 300px;
 }
 
-.main .nav-bar a {
+.main .nav-bar ul {
   position: relative;
-  margin: 10px auto 10px auto;
   display: block;
+  margin: 10px 10px 10px 10px;
+}
 
+.main .nav-bar li {
+  margin: 10px 0 10px 0;
+}
+
+.main .nav-bar a {
   text-decoration: none;
   text-align: center;
   font-size: 15pt;
   color: rgba(255,255,255,0.9);
-  transition: color .50s ease-in-out;
-  -ms-transition: color .50s ease-in-out;
-  -moz-transition: color .50s ease-in-out;
-  -webkit-transition: color .50s ease-in-out;  
+  transition: color .25s ease-in-out;
+  -ms-transition: color .25s ease-in-out;
+  -moz-transition: color .25s ease-in-out;
+  -webkit-transition: color .25s ease-in-out;  
 }
 
 .main .nav-bar a:hover {
   color: #4080F7;
-  transition: color .50s ease-in-out;
-  -ms-transition: color .50s ease-in-out;
-  -moz-transition: color .50s ease-in-out;
-  -webkit-transition: color .50s ease-in-out;  
+  transition: color .25s ease-in-out;
+  -ms-transition: color .25s ease-in-out;
+  -moz-transition: color .25s ease-in-out;
+  -webkit-transition: color .25s ease-in-out;  
 }
 
 
 //=========================================//
 // Main content formatting //
+
+.main .main-content {
+  padding-top: 200px;
+  //display: block;
+}
 
 .main .inner-content {
   //position: absolute;
@@ -212,18 +218,83 @@ table {
   //display: block;
   margin: 0 auto;
   //width: 300px;
-  width: 100%;
+  width: 90%;
   height: 300px;
 
 }
 
-.main .inner-container p {
+.main .inner-container h1 {
   text-align: center;
-  font-size: 30pt;
+  font-size: 20pt;
+  font-weight: bold;
   color: rgba(255,255,255,0.9);
-  height: 80%;
-  width: 80%;
   margin: 0 auto;
+}
+
+
+.main .inner-container p {
+  text-align: left;
+  font-size: 15pt;
+  color: rgba(255,255,255,0.9);
+  margin: 0 auto;
+}
+
+.main .inner-container .content-link a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #7FA6F0;
+  transition: color .25s ease-in-out;
+  -ms-transition: color .25s ease-in-out;
+  -moz-transition: color .25s ease-in-out;
+  -webkit-transition: color .25s ease-in-out; 
+}
+
+.main .inner-container .content-link a:hover {
+  color: #4080F7;
+  transition: color .25s ease-in-out;
+  -ms-transition: color .25s ease-in-out;
+  -moz-transition: color .25s ease-in-out;
+  -webkit-transition: color .25s ease-in-out;  
+}
+
+//=========================================//
+// Maps //
+
+.main .map {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}
+
+.main .map iframe {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}
+
+.main .map .link {
+  font-size: 12pt;
+  text-align: center;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}
+
+.main .map .link a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.9);
+  transition: color .25s ease-in-out;
+  -ms-transition: color .25s ease-in-out;
+  -moz-transition: color .25s ease-in-out;
+  -webkit-transition: color .25s ease-in-out;  
+}
+
+.main .map .link a:hover {
+  color: #4080F7;
+  transition: color .25s ease-in-out;
+  -ms-transition: color .25s ease-in-out;
+  -moz-transition: color .25s ease-in-out;
+  -webkit-transition: color .25s ease-in-out;  
 }
 
 //=========================================//
@@ -280,5 +351,15 @@ table {
   .main .header .details {
     padding: 5px 0 5px 0;
     font-size: 8pt;
+  }
+
+  .main .main-content {
+    padding-top: 100px;
+    //display: block;
+  }
+
+  .main .map iframe {
+    width: 325px;
+    height: 325px;
   }
 }
