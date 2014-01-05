@@ -44,6 +44,9 @@ table {
   border-spacing: 0;
   }
 
+//=========================================//
+// Scrolling Background //
+
 .main {
   background: url("bg_layer_1_a.png") 50% 0 repeat fixed; min-height: 2000px;
   height: 1000px; 
@@ -84,6 +87,147 @@ table {
 }
 
 //=========================================//
+// Header and navigation //
+
+.main .header {
+  padding: 10px 0px 0px 0px;
+  position: fixed;
+  //height: 100px;
+  width: 100%;
+  //background-color: rgba(255,255,255, 0.10);
+  background-color: rgba(25,25,75,0.80);  
+  display: block;
+  //float:left;
+  z-index:1000;
+  //background-clip: content-box;
+  //opacity: 0.4;  
+}
+
+.main .header .nav-button {
+  display: none;
+  visibility: hidden;
+}
+
+.main .header p {
+  position: relative;
+  display: block;  
+
+  text-decoration: none;
+  text-align: center;
+  font-size: 15pt;
+
+  color: rgba(255,255,255,0.9);
+}
+
+.main .header .title {
+  padding: 30px 0 10px 0;
+  font-size: 35pt;
+  font-weight: bold;
+}
+
+.main .header .details {
+  padding: 10px 0 30px 0;
+}
+
+
+.main hr {
+  //padding: 10px 0 10px 0;
+  //width: 95%;
+  height: 0px;
+  //padding: 0px;
+}
+
+.main .main-content {
+  padding-top: 200px;
+  //display: block;
+}
+
+.main .nav-bar {
+  position: relative;
+  float: left;
+  //position: absolute;
+  
+  position: fixed;
+
+  //width: 200px;
+  //width: 22.5%;
+  //left: 2.5%;  
+  width: 200px;
+  margin-left: 10px;
+  //left: 10px;
+  //left: 30px;
+  min-height: 300px;
+}
+
+.main .nav-bar a {
+  position: relative;
+  margin: 10px auto 10px auto;
+  display: block;
+
+  text-decoration: none;
+  text-align: center;
+  font-size: 15pt;
+  color: rgba(255,255,255,0.9);
+  transition: color .50s ease-in-out;
+  -ms-transition: color .50s ease-in-out;
+  -moz-transition: color .50s ease-in-out;
+  -webkit-transition: color .50s ease-in-out;  
+}
+
+.main .nav-bar a:hover {
+  color: #4080F7;
+  transition: color .50s ease-in-out;
+  -ms-transition: color .50s ease-in-out;
+  -moz-transition: color .50s ease-in-out;
+  -webkit-transition: color .50s ease-in-out;  
+}
+
+
+//=========================================//
+// Main content formatting //
+
+.main .inner-content {
+  //position: absolute;
+  position: relative;
+  padding: 0 0 0 0px;
+
+  margin-left: 10px;
+
+  //display: block;
+  //float: left;
+
+  //margin: 0 auto;
+  //width: 100%;
+  //margin: 0 5% 0 5%;
+  width: 70%;
+  //width: auto;
+  float:left;
+  //width: auto;
+  //left: 250px;
+  left: 25%;
+}
+
+.main .inner-container {
+  position: relative;
+  //display: block;
+  margin: 0 auto;
+  //width: 300px;
+  width: 100%;
+  height: 300px;
+
+}
+
+.main .inner-container p {
+  text-align: center;
+  font-size: 30pt;
+  color: rgba(255,255,255,0.9);
+  height: 80%;
+  width: 80%;
+  margin: 0 auto;
+}
+
+//=========================================//
+// Responsive changes //
 
 @media screen and (max-width : 900px) {
   /* Styles */
@@ -94,24 +238,24 @@ table {
     visibility: hidden;
   }
 
-  .home .inner-content {
+  .main .inner-content {
     width: 100%;
     margin: 0 auto;
     margin-left: 0;
     left: 0;
   }
 
-  .home .header .title {
+  .main .header .title {
     padding: 5px 0 5px 0;
     font-size: 25pt;
   }
 
-  .home .header .details {
+  .main .header .details {
     padding: 5px 0 5px 0;
     font-size: 10pt;
   }
 
-  .home .header .nav-button {
+  .main .header .nav-button {
     //position: fixed;
     //top: 30px;
     //left: 10px;
@@ -128,12 +272,12 @@ table {
 }
 
 @media screen and (max-width : 450px) {
-  .home .header .title {
+  .main .header .title {
     padding: 5px 0 5px 0;
     font-size: 20pt;
   }
 
-  .home .header .details {
+  .main .header .details {
     padding: 5px 0 5px 0;
     font-size: 8pt;
   }

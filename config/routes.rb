@@ -1,13 +1,12 @@
 WeddingWebsite::Application.routes.draw do
 
-  resource :home, controller: :home, only: [:show] do 
-    member do
-      get 'coming_soon'
-    end
-  end
+  resource :home, controller: :home, only: [:show]
 
-  root to:  'home#coming_soon'
-  #root to: 'home#show'
+  resource :accommodations, only: [:show]
+  resource :coming_soon, controller: :coming_soon, only: [:show]
+
+  #root to:  'home#coming_soon'
+  root to: 'home#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
