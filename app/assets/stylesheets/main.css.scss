@@ -108,6 +108,11 @@ table {
   visibility: hidden;
 }
 
+.main .header .nav-button img {
+  // This is currently the size of the image
+  width: 27px;
+}
+
 .main .header p {
   position: relative;
   display: block;  
