@@ -16,8 +16,20 @@
     <div class="header">
       <p class="title">Sandra and Brian</p>
       <p class="details">May 31st, 2013 * Minneapolis - St. Paul</p>  
-      <a href="#" class="nav-button">Ham!</a>
+      <a href="#" class="nav-button" id="nav-button">Ham!</a>
       <hr>
+      <div class="dropdown-nav" id="dropdown-nav">
+        <ul>
+          <li><%= link_to "Home", home_path %></li>
+          <li><%= link_to "Accommodations", accommodations_path %></li>
+          <li><%= link_to "Directions", directions_path %></li>
+          <li><%= link_to "FAQs", faq_path %></li>
+          <li><%= link_to "Guest Book", guest_book_path %></li>
+          <li><%= link_to "Local Recommendations", recommendations_path %></li>                 
+          <li><%= link_to "Registry", registry_path %></li>
+          <li><%= link_to "RSVP", rsvp_path %></li>
+          <li><%= link_to "Schedule", schedule_path %></li> 
+      </div>
     </div>
     <div class="main-content">
       <div class="nav-bar outline-box">
