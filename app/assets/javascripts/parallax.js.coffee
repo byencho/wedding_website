@@ -29,7 +29,7 @@ parallaxScroll = ->
     coords = '50% '+ yPos + 'px';
 
     #Move the background
-    bgObject.css({ backgroundPosition: coords })
+    bgObject.css({ backgroundPosition: coords })  
 
 #
 # Create HTML5 elements for IE's sake

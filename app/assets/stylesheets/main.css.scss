@@ -47,31 +47,40 @@ table {
 //=========================================//
 // Scrolling Background //
 
-.main {
+
+body {
   font-family: Arial, Helvetica, sans-serif;
-  background: url("bg_layer_1_a.png") 50% 0 repeat fixed; min-height: 2000px;
-  height: 1000px; 
+  background: #000000;
+}
+
+.main {
+  min-height: 2000px;
+}
+
+.main .layer-1 {
+  background: url("bg_layer_1_a.png") 50% 0 repeat fixed;
+  min-height: 2000px;
   margin: 0 auto;
   width: 100%;
-  position: relative;
+  position: fixed;
 }
 
 .main .layer-2 {
-  background: url("bg_layer_2.png") 50% 0 repeat fixed; min-height: 2000px;
+  background: url("bg_layer_2.png") 50% 0 repeat fixed;
+  min-height: 2000px;
   margin: 0 auto; 
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0px;
-  width: 100%;
 }
 
 .main .layer-3 {
-  background: url("bg_layer_3.png") 50% 0 repeat fixed; min-height: 2000px;
+  background: url("bg_layer_3.png") 50% 0 repeat fixed;
+  min-height: 2000px;
   margin: 0 auto; 
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0px;
-  width: 100%;
 }
 
 .outline-box {
@@ -303,18 +312,23 @@ table {
 
 .main .inner-container h1 {
   text-align: left;
-  font-size: 20pt;
+  font-size: 25pt;
   font-weight: bold;
-  color: rgba(255,255,255,0.9);
-  margin: 0 auto;
+  //color: rgba(255,255,255,0.9);
+  color: rgba(255,255,75,0.9);
+  //margin: 0 auto;
+  margin: 0 auto 0 auto;  
 }
 
 .main .inner-container h2 {
   text-align: left;
   font-size: 18pt;
-  font-weight: bold;
-  color: rgba(255,255,255,0.9);
-  margin: 0 auto;
+  //font-weight: bold;
+  font-style: italic;
+  //color: rgba(255,255,255,0.9);
+  //color: rgba(255,255,0,0.9);
+  color: rgba(255,255,125,0.9);
+  margin: 20px auto 20px auto;  
 }
 
 .main .inner-container .strong {
@@ -344,6 +358,42 @@ table {
   -ms-transition: color .25s ease-in-out;
   -moz-transition: color .25s ease-in-out;
   -webkit-transition: color .25s ease-in-out;  
+}
+
+.main .inner-container .info-image img {
+  display: block;
+  //margin: 10px;
+  margin: 15px 0 15px 0;
+  //margin: 10px auto 10px auto;
+  max-height: 500px;
+  max-width: 500px;
+}
+
+.main .inner-container .info-image-embed img {
+  display: inline-block;
+  float: left;
+  margin: 10px auto 10px auto;
+  max-height: 250px;
+  max-width: 250px;
+  padding: 20px;
+}
+
+.main .inner-container table.info-image-container {
+  display: block; 
+  margin: 0 auto;
+}
+
+.main .inner-container .info-image-container th {
+  margin: 0 auto;
+  padding: 10px;
+  vertical-align: middle;
+}
+
+.main .inner-container .info-image-small img {
+  display: block;
+  margin: 10px auto 10px auto;
+  max-height: 250px;
+  max-width: 250px;
 }
 
 //=========================================//
@@ -412,6 +462,9 @@ table {
     visibility: visible;
   }
 
+  .main .main-content {
+    padding-top: 100px;  }
+
   .main .inner-content {
     width: 100%;
     margin: 0 auto;
@@ -462,6 +515,23 @@ table {
     width: 400px;
     height: 325px;
   }
+
+  .main .inner-container .info-image img {
+    max-height: 400px;
+    max-width: 400px;
+  }
+
+  .main .inner-container .info-image-embed img {
+    display: block;
+    position: relative;
+    float: none;    
+  }
+
+  .main .inner-container .info-image-small img {
+    max-height: 200px;
+    max-width: 200px;
+  }
+
 }
 
 //=========================================//
@@ -481,13 +551,38 @@ table {
     font-size: 8pt;
   }
 
-  .main .main-content {
-    padding-top: 100px;
-    //display: block;
-  }
-
   .main .map iframe {
     width: 325px;
     height: 325px;
+  }
+
+  .main .inner-container .info-image img {
+    max-height: 325px;
+    max-width: 325px;
+  }
+
+  .main .inner-container .info-image-small img {
+    max-height: 162px;
+    max-width: 162px;
+  }
+
+}
+
+//=========================================//
+@media screen and (max-width : 375px) {
+
+  .main .map iframe {
+    width: 275px;
+    height: 275x;
+  }
+
+  .main .inner-container .info-image img {
+    max-height: 275px;
+    max-width: 275px;
+  }
+
+  .main .inner-container .info-image-small img {
+    max-height: 137px;
+    max-width: 137px;
   }
 }
