@@ -13,10 +13,10 @@
   <div class="main">
     <div class="layer-1" data-type="background" data-speed="20"></div>
     <div class="layer-2" data-type="background" data-speed="10"></div>  
-    <div class="layer-3" data-type="background" data-speed="5"></div>
+    <div class="layer-3" data-type="background" data-speed="5"></div>    
     <div class="header">
       <p class="title">Sandra and Brian</p>
-      <p class="details">May 31st, 2013 * Minneapolis - St. Paul</p>      
+      <p class="details">May 31st, 2013 &#9679; Minneapolis - St. Paul</p>      
       <a href="#" class="nav-button" id="nav-button"><%= image_tag("ham.png", alt: "Navigation icon") %></a>
       <hr>
       <div class="dropdown-nav" id="dropdown-nav">
@@ -48,10 +48,11 @@
           <li><%= link_to "Schedule", schedule_path %></li>                         
         </ul>      
       </div>
-      <div class="inner-content">
+      <div class="inner-content">        
         <%= yield %>
       </div>
     </div>
   </div>
+  <div class="space-dinosaur"><%= image_tag("space_dinosaur.png", alt: "Space dinosaur") %></div> 
 </body>
 </html>

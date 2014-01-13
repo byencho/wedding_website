@@ -45,6 +45,63 @@ table {
   }
 
 //=========================================//
+// "Footer" //
+
+/*
+.space-dinosaur {
+  clear: both;
+  //margin: 0 auto;
+  //width: 100%;
+  position: relative;
+  display: block;
+  //margin: 0 auto;
+  //background: #ffffff;
+  //bottom: 0px;
+  height: 50px;
+  z-index: 1001;
+}
+*/
+
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+.space-dinosaur img {
+  clear: both;
+  position: relative;
+  display: block;
+  margin: 20px auto;
+  height: 50px;
+  float: none;
+  //width: 100px;
+}
+
+.space-dinosaur img:hover {
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 750ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 750ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 750ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    -o-transition: rotate(3600deg);
+}
+
+//=========================================//
 // Scrolling Background //
 
 
@@ -54,6 +111,7 @@ body {
 }
 
 .main {
+  display: block;
   min-height: 2000px;
 }
 
@@ -150,6 +208,7 @@ body {
 
 .main .header .details {
   padding: 10px 0 30px 0;
+  text-transform: lowercase;
 }
 
 
@@ -275,28 +334,26 @@ body {
 // Main content formatting //
 
 .main .main-content {
+  clear: both;
   padding-top: 200px;
-  //display: block;
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 
 .main .inner-content {
   //position: absolute;
   position: relative;
+  display: block;
   padding: 0 0 0 0px;
 
   margin-left: 10px;
 
-  //display: block;
   //float: left;
 
-  //margin: 0 auto;
-  //width: 100%;
-  //margin: 0 5% 0 5%;
   width: 70%;
-  //width: auto;
-  float:left;
-  //width: auto;
-  //left: 250px;
+  height: 100%;
   left: 25%;
 }
 
@@ -306,8 +363,6 @@ body {
   margin: 0 auto;
   //width: 300px;
   width: 90%;
-  height: 300px;
-
 }
 
 .main .inner-container h1 {
@@ -375,7 +430,8 @@ body {
   margin: 10px auto 10px auto;
   max-height: 250px;
   max-width: 250px;
-  padding: 20px;
+  //padding: 20px;
+  padding: 0 20px 0 0;
 }
 
 .main .inner-container table.info-image-container {
