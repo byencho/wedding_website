@@ -135,17 +135,12 @@ body {
 // Header and navigation //
 
 .main .header {
-  padding: 10px 0px 0px 0px;
-  position: fixed;
-  //height: 100px;
-  width: 100%;
-  //background-color: rgba(255,255,255, 0.10);
-  background-color: rgba(25,25,75,0.80);  
   display: block;
-  //float:left;
-  z-index:1000;
-  //background-clip: content-box;
-  //opacity: 0.4;  
+  position: fixed;
+  padding: 10px 0px 0px 0px;
+  width: 100%;
+  background-color: rgba(25,25,75,0.80);
+  z-index:1000;   
 }
 
 .main .header .nav-button {
@@ -161,39 +156,29 @@ body {
 .main .header p {
   position: relative;
   display: block;  
-
   text-decoration: none;
   text-align: center;
-  font-size: 15pt;
-
+  font-size: 12pt;
   color: rgba(255,255,255,0.9);
 }
 
 .main .header .title {
-  padding: 30px 0 10px 0;
-  font-size: 35pt;
-  font-weight: bold;
-
-  // TESTING
-  height: 50px;
+  padding: 5px 0 5px 0;
+  height: 40px;
   font-size: 0pt;
   background-image: url("header_santa_fe.png");
-  background-size: auto 50px;
+  background-size: auto 40px;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .main .header .details {
-  padding: 10px 0 30px 0;
+  padding: 10px 0 10px 0;
   text-transform: lowercase;
 }
 
-
 .main hr {
-  //padding: 10px 0 10px 0;
-  //width: 95%;
   height: 0px;
-  //padding: 0px;
 }
 
 
@@ -307,7 +292,7 @@ body {
 
 .main .main-content {
   clear: both;
-  padding-top: 200px;
+  padding-top: 125px;
   position: relative;
   display: block;
   height: 100%;
@@ -315,15 +300,10 @@ body {
 }
 
 .main .inner-content {
-  //position: absolute;
-  position: relative;
   display: block;
+  position: relative;
   padding: 0 0 0 0px;
-
   margin-left: 10px;
-
-  //float: left;
-
   width: 70%;
   height: 100%;
   left: 25%;
@@ -331,9 +311,7 @@ body {
 
 .main .inner-container {
   position: relative;
-  //display: block;
   margin: 0 auto;
-  //width: 300px;
   width: 90%;
 }
 
@@ -341,19 +319,14 @@ body {
   text-align: left;
   font-size: 25pt;
   font-weight: bold;
-  //color: rgba(255,255,255,0.9);
   color: rgba(255,255,75,0.9);
-  //margin: 0 auto;
   margin: 0 auto 0 auto;  
 }
 
 .main .inner-container h2 {
   text-align: left;
   font-size: 18pt;
-  //font-weight: bold;
-  font-style: italic;
-  //color: rgba(255,255,255,0.9);
-  //color: rgba(255,255,0,0.9);
+  font-style: italic;;
   color: rgba(255,255,125,0.9);
   margin: 20px auto 20px auto;  
 }
@@ -389,9 +362,7 @@ body {
 
 .main .inner-container .info-image img {
   display: block;
-  //margin: 10px;
   margin: 15px 0 15px 0;
-  //margin: 10px auto 10px auto;
   max-height: 500px;
   max-width: 500px;
 }
@@ -402,7 +373,6 @@ body {
   margin: 10px auto 10px auto;
   max-height: 250px;
   max-width: 250px;
-  //padding: 20px;
   padding: 0 20px 0 0;
 }
 
@@ -501,14 +471,14 @@ body {
     visibility: hidden;
   }
 
-  // TESTING
   .main .dropdown-nav {
     display: none;
     visibility: visible;
   }
 
   .main .main-content {
-    padding-top: 100px;  }
+    padding-top: 100px;
+  }
 
   .main .inner-content {
     width: 100%;
@@ -519,13 +489,9 @@ body {
 
   .main .header .title {
     padding: 5px 0 5px 0;
-    font-size: 25pt;
-
-    // TESTING
     font-size: 0px;
     height: 25px;
     background-size: auto 25px;
-
   }
 
   .main .header .details {
@@ -534,18 +500,14 @@ body {
   }
 
   .main .header .nav-button {
-    //position: fixed;
-    //top: 30px;
-    //left: 10px;
     position: absolute;
     top: 30px;
     left: 10px;
     display: block;
-    //float: left;
     visibility: visible;
     height: 10px;
     width: 10px;
-    color: #ffffff;    
+    color: #ffffff;
   }
 
   .main .map iframe {
@@ -583,11 +545,7 @@ body {
 @media screen and (max-width : 450px) {
   .main .header .title {
     padding: 5px 0 5px 0;
-    font-size: 20pt;
-
-    // TESTING
     height: 20px;
-    font-size: 0px;
     background-size: auto 20px;
   }
 
