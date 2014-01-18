@@ -9,50 +9,53 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body data-type="background" data-speed="20">
-  <div class="main">
-    <div class="layer-1" data-type="background" data-speed="20"></div>
-    <div class="layer-2" data-type="background" data-speed="10"></div>  
-    <div class="layer-3" data-type="background" data-speed="5"></div>    
-    <div class="header">
-      <p class="title">Sandra and Brian</p>
-      <p class="details">May 31st, 2013 &#9679; Minneapolis - St. Paul</p>      
-      <a href="#" class="nav-button" id="nav-button"><%= image_tag("ham.png", alt: "Navigation icon") %></a>
-      <hr>
-      <div class="dropdown-nav" id="dropdown-nav">
-        <ul>
-          <li><%= link_to "Home", home_path %></li>
-          <li><%= link_to "Accommodations", accommodations_path %></li>
-          <li><%= link_to "Directions", directions_path %></li>
-          <li><%= link_to "FAQs", faq_path %></li>
-          <li><%= link_to "Guest Book", guest_book_path %></li>
-          <li><%= link_to "Local Recommendations", recommendations_path %></li>                 
-          <li><%= link_to "Registry", registry_path %></li>
-          <li><%= link_to "RSVP", rsvp_path %></li>
-          <li><%= link_to "Schedule", schedule_path %></li> 
-        </ul>
-        <hr />
-      </div>
-    </div>
-    <div class="main-content">
-      <div class="nav-bar outline-box">
-        <ul>
-          <li><%= link_to "Home", home_path %></li>
-          <li><%= link_to "Accommodations", accommodations_path %></li>
-          <li><%= link_to "Directions", directions_path %></li>
-          <li><%= link_to "FAQs", faq_path %></li>
-          <li><%= link_to "Guest Book", guest_book_path %></li>
-          <li><%= link_to "Local Recommendations", recommendations_path %></li>                 
-          <li><%= link_to "Registry", registry_path %></li>
-          <li><%= link_to "RSVP", rsvp_path %></li>
-          <li><%= link_to "Schedule", schedule_path %></li>                         
-        </ul>      
-      </div>
-      <div class="inner-content">        
-        <%= yield %>
+<body> 
+  <div class="layer-1" data-type="background" data-speed="20">
+    <div class="layer-2" data-type="background" data-speed="10">
+      <div class="layer-3" data-type="background" data-speed="5">
+        <div class="main">
+          <div class="header">
+            <p class="title">Sandra and Brian</p>
+            <p class="details">May 31st, 2013 &#9679; Minneapolis - St. Paul</p>      
+            <a href="#" class="nav-button" id="nav-button"><%= image_tag("ham.png", alt: "Navigation icon") %></a>
+            <hr>
+            <div class="dropdown-nav" id="dropdown-nav">
+              <ul>
+                <li><%= link_to "Home", home_path %></li>
+                <li><%= link_to "Accommodations", accommodations_path %></li>
+                <li><%= link_to "Directions", directions_path %></li>
+                <li><%= link_to "FAQs", faq_path %></li>
+                <li><%= link_to "Guest Book", guest_book_path %></li>
+                <li><%= link_to "Local Recommendations", recommendations_path %></li>                 
+                <li><%= link_to "Registry", registry_path %></li>
+                <li><%= link_to "RSVP", rsvp_path %></li>
+                <li><%= link_to "Schedule", schedule_path %></li> 
+              </ul>
+              <hr />
+            </div>
+          </div>
+          <div class="main-content">
+            <div class="nav-bar outline-box">
+              <ul>
+                <li><%= link_to "Home", home_path %></li>
+                <li><%= link_to "Accommodations", accommodations_path %></li>
+                <li><%= link_to "Directions", directions_path %></li>
+                <li><%= link_to "FAQs", faq_path %></li>
+                <li><%= link_to "Guest Book", guest_book_path %></li>
+                <li><%= link_to "Local Recommendations", recommendations_path %></li>                 
+                <li><%= link_to "Registry", registry_path %></li>
+                <li><%= link_to "RSVP", rsvp_path %></li>
+                <li><%= link_to "Schedule", schedule_path %></li>                         
+              </ul>      
+            </div>
+            <div class="inner-content">        
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+        <div class="space-dinosaur"><%= image_tag("space_dinosaur.png", alt: "Space dinosaur") %></div>
       </div>
     </div>
   </div>
-  <div class="space-dinosaur"><%= image_tag("space_dinosaur.png", alt: "Space dinosaur") %></div> 
-</body>
+</body>  
 </html>
