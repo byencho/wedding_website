@@ -266,14 +266,9 @@ body {
 // Nav bar
 
 .main .nav-bar {
-  //position: relative;
-  //float: left;
-  //position: absolute;
-  
   position: fixed;
   width: 200px;
   margin-left: 10px;
-  min-height: 300px;
 }
 
 .main .nav-bar ul {
@@ -478,6 +473,23 @@ body {
 }
 
 //=========================================//
+// Contact Us //
+
+.contact-us table {
+  font-size: 20pt;
+}
+
+.contact-us table tr {
+}
+
+.contact-us table td {
+  width: 5em;
+  padding: 5px;
+  text-align: left;
+  color: #ffffff;
+}
+
+//=========================================//
 // Responsive changes //
 
 @media screen and (max-width : 900px) {
@@ -599,6 +611,10 @@ body {
     max-width: 162px;
   }
 
+  .contact-us table {
+    font-size: 16pt;
+  }
+
 }
 
 //=========================================//
@@ -617,5 +633,9 @@ body {
   .main .inner-container .info-image-small img {
     max-height: 137px;
     max-width: 137px;
+  }
+
+  .contact-us table {
+    font-size: 12pt;
   }
 }

@@ -1,41 +1,38 @@
-<div class="directions">
-  <div class="inner-container">
-    <p>
-      For those of you flying in from out of town, thanks for making the trek and we hope you enjoy your time in Minnesota! Check out our <span class="content-link"><%= link_to "recommendations", recommendations_path %></span> for some things to do while you're in town if you have some time to explore.
+<div class="inner-container">
+  <p>
+    For those of you flying in from out of town, thanks for making the trek and we hope you enjoy your time in Minnesota! Check out our <span class="content-link"><%= link_to "recommendations", recommendations_path %></span> for some things to do while you're in town if you have some time to explore.
+  <br />
+  <br />
+    We have a hotel block at the <span class="content-link"><%= link_to "Westin", accommodations_path %></span> in downtown Minneapolis for your relaxing pleasure. In order to simplify your travel, we'd recommend you take the <span class="content-link"><a href="#light-rail-map">light rail</a></span> from the airport to the hotel and consider skipping a car rental. If you do have a car with you, there is valet parking at the hotel and multiple cheaper self-park lots within a block or two of the hotel.
+  <br />  
+  <br />
+    All you need to know in terms of directions for the big day:
+  <br />
+  <br />
+    <span class="strong">For drivers:</span> <br />
+    - Take I-94 to Snelling Ave and go south on Snelling.  <br />
+    - Turn right onto Grand Ave.  <br />
+    - Turn Left onto S Macalester St.  <br />
+    - In a couple of blocks, the parking lot will be on your right.
+  <br />
+  <br />
+    <span class="strong">For riders:</span> <br />
+    We'll be providing transportation on good old fashioned yellow school buses from the hotel to the wedding and then back again. 
+  </p>
+  <br />
+  <div class="map" id="events-map">
+    <div class="map-header">Main Events Map</div>
+    <iframe width="500" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?msid=202102478433825847942.0004ef3c5e87dd3b58e83&amp;msa=0&amp;ie=UTF8&amp;t=m&amp;ll=44.939749,-93.168933&amp;spn=0.004352,0.008776&amp;output=embed"></iframe>
     <br />
-    <br />
-      We have a hotel block at the <span class="content-link"><%= link_to "Westin", accommodations_path %></span> in downtown Minneapolis for your relaxing pleasure. In order to simplify your travel, we'd recommend you take the <span class="content-link"><a href="#light-rail-map">light rail</a></span> from the airport to the hotel and consider skipping a car rental. If you do have a car with you, there is valet parking at the hotel and multiple cheaper self-park lots within a block or two of the hotel.
-    <br />  
-    <br />
-      All you need to know in terms of directions for the big day:
-    <br />
-    <br />
-      <span class="strong">For drivers:</span> <br />
-      - Take I-94 to Snelling Ave and go south on Snelling.  <br />
-      - Turn right onto Grand Ave.  <br />
-      - Turn Left onto S Macalester St.  <br />
-      - In a couple of blocks, the parking lot will be on your left.
-    <br />
-    <br />
-      <span class="strong">For riders:</span> <br />
-      We'll be providing transportation on good old fashioned yellow school buses from the hotel to the wedding and then back again. 
-    </p>
-    <br />
-    <div class="map" id="events-map">
-      <div class="map-header">Main Events Map</div>
-      <iframe width="500" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?msid=202102478433825847942.0004ef3c5e87dd3b58e83&amp;msa=0&amp;ie=UTF8&amp;t=m&amp;ll=44.939749,-93.168933&amp;spn=0.004352,0.008776&amp;output=embed"></iframe>
-      <br />
-      <div class="map-link"><a href="https://maps.google.com/maps/ms?msid=202102478433825847942.0004ef3c5e87dd3b58e83&amp;msa=0&amp;ie=UTF8&amp;t=m&amp;ll=44.939749,-93.168933&amp;spn=0.004352,0.008776&amp;source=embed" target="_blank">View in a larger map</a>
-      </div>
+    <div class="map-link"><a href="https://maps.google.com/maps/ms?msid=202102478433825847942.0004ef3c5e87dd3b58e83&amp;msa=0&amp;ie=UTF8&amp;t=m&amp;ll=44.939749,-93.168933&amp;spn=0.004352,0.008776&amp;source=embed" target="_blank">View in a larger map</a>
     </div>
+  </div>
+  <br />
+  <br />
+  <div class="map" id="light-rail-map">
+    <div class="map-header">Light Rail Map</div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d180781.92681711676!2d-93.221397!3d44.929078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!1i0!3e3!4m3!3m2!1d44.880627!2d-93.20509!4m5!1s0x52b3329a1387ba43%3A0x21ba2662a976ccc9!2sTHE+WESTIN+MINNEAPOLIS%2C+S+6th+St%2C+Minneapolis%2C+MN!3m2!1d44.977592!2d-93.270376!5e0!3m2!1sen!2sus!4v1388955137137" width="500" height="450" frameborder="0" style="border:0"></iframe>
     <br />
-    <br />
-    <div class="map" id="light-rail-map">
-      <div class="map-header">Light Rail Map</div>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d180781.92681711676!2d-93.221397!3d44.929078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!1i0!3e3!4m3!3m2!1d44.880627!2d-93.20509!4m5!1s0x52b3329a1387ba43%3A0x21ba2662a976ccc9!2sTHE+WESTIN+MINNEAPOLIS%2C+S+6th+St%2C+Minneapolis%2C+MN!3m2!1d44.977592!2d-93.270376!5e0!3m2!1sen!2sus!4v1388955137137" width="500" height="450" frameborder="0" style="border:0"></iframe>
-      <br />
-      <div class="map-link"><a href="http://goo.gl/maps/R9SFo" target="_blank">View in a larger map</a></div>
-    </div>
-
+    <div class="map-link"><a href="http://goo.gl/maps/R9SFo" target="_blank">View in a larger map</a></div>
   </div>
 </div>

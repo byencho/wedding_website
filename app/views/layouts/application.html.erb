@@ -20,33 +20,13 @@
             <a href="#" class="nav-button" id="nav-button"><%= image_tag("ham.png", alt: "Navigation icon") %></a>
             <hr>
             <div class="dropdown-nav" id="dropdown-nav">
-              <ul>
-                <li><%= link_to "Home", home_path %></li>
-                <li><%= link_to "Accommodations", accommodations_path %></li>
-                <li><%= link_to "Directions", directions_path %></li>
-                <li><%= link_to "FAQs", faq_path %></li>
-                <li><%= link_to "Guest Book", guest_book_path %></li>
-                <li><%= link_to "Local Recommendations", recommendations_path %></li>                 
-                <li><%= link_to "Registry", registry_path %></li>
-                <li><%= link_to "RSVP", rsvp_path %></li>
-                <li><%= link_to "Schedule", schedule_path %></li> 
-              </ul>
+              <%= render partial: "shared/nav" %>
               <hr />
             </div>
           </div>
           <div class="main-content">
             <div class="nav-bar outline-box">
-              <ul>
-                <li><%= link_to "Home", home_path %></li>
-                <li><%= link_to "Accommodations", accommodations_path %></li>
-                <li><%= link_to "Directions", directions_path %></li>
-                <li><%= link_to "FAQs", faq_path %></li>
-                <li><%= link_to "Guest Book", guest_book_path %></li>
-                <li><%= link_to "Local Recommendations", recommendations_path %></li>                 
-                <li><%= link_to "Registry", registry_path %></li>
-                <li><%= link_to "RSVP", rsvp_path %></li>
-                <li><%= link_to "Schedule", schedule_path %></li>                         
-              </ul>      
+              <%= render partial: "shared/nav" %>
             </div>
             <div class="inner-content">        
               <%= yield %>
