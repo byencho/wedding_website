@@ -87,11 +87,45 @@ table {
 }
 
 //=========================================//
+// Variables and Themes //
+
+$translucent-white: rgba(255,255,255,0.90);
+$translucent-gray: rgba(255,255,255,0.75);
+
+// Dark Theme
+$header-background-color: rgba(25,25,75,0.80);
+$main-background-image: url("bg_layer_1_a.png") 50% 0 repeat fixed;
+
+// Light Theme
+//$header-background-color: rgba(60,80,130,0.80);
+//$main-background-image: url("bg_layer_1.png") 50% 0 repeat fixed;
+
+//=========================================//
+// Fonts //
+
+@font-face {
+    font-family: "gill_sans";
+    src: asset-url('fonts/gill_sans.eot',font);
+    src: asset-url('fonts/gill_sans.ttf',font) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+//=========================================//
 // Scrolling Background //
 
-
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  //font-family: Arial, Helvetica, sans-serif;
+  //font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  //font-family: "gill_sans";
+  //font-weight: normal;
+
+  font-family: 'Lato', sans-serif;
+
+  font-weight: lighter;
+  color: $translucent-gray;
   background: #000000;
 }
 
@@ -101,7 +135,7 @@ body {
 }
 
 .layer-1 {
-  background: url("bg_layer_1_a.png") 50% 0 repeat fixed;
+  background: $main-background-image;
   margin: 0 auto;
   width: 100%;
 }
@@ -119,7 +153,7 @@ body {
 }
 
 .outline-box {
-  border: 1px solid rgba(255, 255, 255, .75);
+  border: 1px solid $translucent-gray;
   -webkit-background-clip: padding-box; /* for Safari */
   background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */  
 
@@ -128,7 +162,7 @@ body {
   -webkit-box-shadow: 0px 0px 3px 1px #ccc;
   box-shadow:         0px 0px 3px 1px #ccc;    
 
-  background-color: rgba(255,255,255, 0.05);
+  background-color: $header-background-color;
 }
 
 //=========================================//
@@ -139,7 +173,8 @@ body {
   position: fixed;
   padding: 10px 0px 0px 0px;
   width: 100%;
-  background-color: rgba(25,25,75,0.80);
+  color: $translucent-white;
+  background-color: $header-background-color;
   z-index:1000;   
 }
 
@@ -159,7 +194,6 @@ body {
   text-decoration: none;
   text-align: center;
   font-size: 12pt;
-  color: rgba(255,255,255,0.9);
 }
 
 .main .header .title {
@@ -181,6 +215,11 @@ body {
   height: 0px;
 }
 
+.main .content-block {
+  display: block;
+  float: left;
+}
+
 
 //=========================================//
 // Dropdown Navigation
@@ -188,7 +227,8 @@ body {
 .main .dropdown-nav {
   display: none;
   visibility: hidden;
-  background-color: rgba(25,25,75,0.80);
+  color: $translucent-white;
+  background-color: $header-background-color;
 }
 
 /* For fade-in animation */
@@ -230,9 +270,7 @@ body {
   text-decoration: none;
   text-align: center;
   font-size: 15pt;
-  color: rgba(255,255,255,0.9);
-  //color: #4080F7;  
-
+  color: $translucent-white;
   transition: color .25s ease-in-out;
   -ms-transition: color .25s ease-in-out;
   -moz-transition: color .25s ease-in-out;
@@ -254,6 +292,7 @@ body {
   position: fixed;
   width: 200px;
   margin-left: 10px;
+  color: $translucent-white;
 }
 
 .main .nav-bar ul {
@@ -271,7 +310,7 @@ body {
   text-decoration: none;
   text-align: center;
   font-size: 15pt;
-  color: rgba(255,255,255,0.9);
+  color: $translucent-white;
   transition: color .25s ease-in-out;
   -ms-transition: color .25s ease-in-out;
   -moz-transition: color .25s ease-in-out;
@@ -319,15 +358,15 @@ body {
   text-align: left;
   font-size: 25pt;
   font-weight: bold;
-  color: rgba(255,255,75,0.9);
+  color: rgba(255,255,100,0.9);
   margin: 0 auto 0 auto;  
 }
 
 .main .inner-container h2 {
   text-align: left;
   font-size: 18pt;
-  font-style: italic;;
-  color: rgba(255,255,125,0.9);
+  font-style: italic;
+  color: rgba(255,255,150,0.9);
   margin: 20px auto 20px auto;  
 }
 
@@ -338,7 +377,6 @@ body {
 .main .inner-container p {
   text-align: left;
   font-size: 15pt;
-  color: rgba(255,255,255,0.9);
   margin: 0 auto;
 }
 
@@ -407,7 +445,7 @@ body {
   font-size: 15pt;
   text-align: center;
   text-decoration: none;
-  color: rgba(255,255,255,0.9);
+  color: $translucent-white;
   margin: 2px auto;
 }
 
@@ -427,7 +465,7 @@ body {
 
 .main .map .map-link a {
   text-decoration: none;
-  color: rgba(255,255,255,0.9);
+  color: $translucent-white;
   transition: color .25s ease-in-out;
   -ms-transition: color .25s ease-in-out;
   -moz-transition: color .25s ease-in-out;
@@ -500,11 +538,11 @@ body {
   }
 
   .main .header .nav-button {
+    display: block;
+    visibility: visible;
     position: absolute;
     top: 30px;
     left: 10px;
-    display: block;
-    visibility: visible;
     height: 10px;
     width: 10px;
     color: #ffffff;
@@ -552,6 +590,10 @@ body {
   .main .header .details {
     padding: 5px 0 5px 0;
     font-size: 8pt;
+  }
+
+  .main .header .nav-button {
+    top: 27px;
   }
 
   .main .map iframe {
