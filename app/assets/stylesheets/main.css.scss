@@ -103,15 +103,6 @@ $main-background-image: url("bg_layer_1_a.png") 50% 0 repeat fixed;
 //=========================================//
 // Fonts //
 
-@font-face {
-    font-family: "gill_sans";
-    src: asset-url('fonts/gill_sans.eot',font);
-    src: asset-url('fonts/gill_sans.ttf',font) format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
 
 //=========================================//
 // Scrolling Background //
@@ -594,6 +585,14 @@ body {
 
   .main .header .nav-button {
     top: 27px;
+  }
+
+  .main .inner-container h1 {
+    font-size: 20pt;
+  }
+
+  .main .inner-container h2 {
+    font-size: 16pt;
   }
 
   .main .map iframe {
