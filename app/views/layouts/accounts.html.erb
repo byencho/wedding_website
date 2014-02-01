@@ -8,7 +8,7 @@
 
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>  
+  <%= csrf_meta_tags %>
 </head>
 <body> 
   <div class="layer-1" data-type="background" data-speed="20">
@@ -18,19 +18,11 @@
           <div class="header">
             <p class="title">Sandra and Brian</p>
             <p class="details">May 31st, 2014 &#9679; Minneapolis - St. Paul</p>
-            <a href="#" class="nav-button" id="nav-button"><%= image_tag("ham.png", alt: "Navigation icon") %></a>
             <hr>
-            <div class="dropdown-nav" id="dropdown-nav">
-              <%= render partial: "shared/nav" %>
-              <hr />
-            </div>
           </div>
           <div class="main-content">
-            <div class="nav-bar outline-box">
-              <%= render partial: "shared/nav" %>
-            </div>
-            <div class="inner-content">
-              <div class="inner-container">        
+            <div class="inner-content-accounts">
+              <div class="inner-container">
                 <%= yield %>
               </div>
             </div>

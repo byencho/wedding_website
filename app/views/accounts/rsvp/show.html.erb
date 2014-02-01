@@ -1,0 +1,99 @@
+<div class="accounts-rsvp">
+  <div class="guest-type-container">
+    <h2>Me</h2>
+    <hr />
+    <div class="guest-container" id="rsvp-me">
+      <% guest_me = @account.guests.where(guest_type: "me").first %>
+      <% if guest_me %>
+        <%= render partial: 'accounts/shared/guest', locals: { id: guest_me.id, type: "me" } %>
+        <%= render partial: 'accounts/shared/edit_form_shared', locals: { id: guest_me.id, type: "me" } %>
+      <% else %>
+        <button class="custom-button" id="rsvp-me-add-button">RSVP</button>
+      <% end %>
+    </div>
+  </div>
+  <br />
+  <div class="guest-type-container">
+    <h2>My Guest</h2>
+    <hr />
+    <div class="guest-container" id="rsvp-guest">
+      <% guest_date = @account.guests.where(guest_type: "guest").first %>
+      <% if guest_date %>
+        <%= render partial: 'accounts/shared/guest', locals: { id: guest_date.id, type: "guest" } %>
+        <%= render partial: 'accounts/shared/edit_form_shared', locals: { id: guest_date.id, type: "guest" } %>
+      <% else %>
+        <button class="custom-button" id="rsvp-guest-add-button">Add</button>
+      <% end %>
+    </div>
+  </div>
+  <br />  
+  <div class="guest-type-container">
+    <h2>My Children</h2>
+    <hr /> 
+    <div class="guest-container" id="rsvp-family">
+      <% guest_children = @account.guests.where(guest_type: "family") %>
+      <% if guest_children.count > 0 %>
+        <ul>
+        <% guest_children.each do |child| %>
+          <li>
+            <%= render partial: 'accounts/shared/guest', locals: { id: child.id, type: "family" } %>
+            <%= render partial: 'accounts/shared/edit_form_shared', locals: { id: child.id, type: "family" } %>
+          </li>
+        <% end %>        
+        </ul>
+      <% end %>
+      <button class="custom-button" id="rsvp-family-add-button">Add</button>
+    </div>
+  </div>
+  <br />
+  <div class="guest-type-container">
+    <h2>People I'm helping out because it's 2014 and computers scare them</h2>
+    <hr />   
+    <div class="guest-container" id="rsvp-other">
+      <% guest_other = @account.guests.where(guest_type: "other") %>
+      <% if guest_other.count > 0 %>
+        <ul>
+        <% guest_other.each do |other_guest| %>
+          <li>
+            <%= render partial: 'accounts/shared/guest', locals: { id: other_guest.id, type: "other" } %>
+            <%= render partial: 'accounts/shared/edit_form_shared', locals: { id: other_guest.id, type: "other" } %>
+          </li>
+        <% end %>
+        </ul>
+      <% end %>
+      <button class="custom-button" id="rsvp-other-add-button">Add</button>
+      </div>
+  </div>
+  <br />   
+  <div class="content-link"><%= link_to "Sign Out", destroy_account_session_path %></div>
+</div>
+
+<%# Any button clicks that append partials must be placed here (cannot be placed in assets folder) %>
+<%= javascript_tag do %>
+  $(function() {
+    $('#rsvp-me-add-button').click(function() {
+      $('#rsvp-me').append("<%= escape_javascript(render :partial => 'accounts/shared/rsvp_form_shared', locals: { account: @account, type: "me" }) %>");
+      $('#rsvp-me-add-button').hide();
+      return false;
+    });
+
+    $('#rsvp-guest-add-button').click(function() {
+      $('#rsvp-guest').append("<%= escape_javascript(render :partial => 'accounts/shared/rsvp_form_shared', locals: { account: @account, type: "guest" }) %>");
+      $('#rsvp-guest-add-button').hide();
+      return false;
+    });
+
+    $('#rsvp-family-add-button').click(function() {
+      $('#rsvp-family').append("<%= escape_javascript(render :partial => 'accounts/shared/rsvp_form_shared', locals: { account: @account, type: "family" }) %>");
+      $('#rsvp-family-add-button').hide();
+      return false;
+    });
+
+    $('#rsvp-other-add-button').click(function() {
+      $('#rsvp-other').append("<%= escape_javascript(render :partial => 'accounts/shared/rsvp_form_shared', locals: { account: @account, type: "other" }) %>");
+      $('#rsvp-other-add-button').hide();
+      return false;
+    });  
+  });
+<% end %>
+

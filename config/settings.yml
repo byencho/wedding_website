@@ -1,0 +1,38 @@
+defaults: &defaults
+  action_mailer:
+    asset_host: 'http://localhost:5000'
+    default_url_options:
+      host: 'localhost:3000'
+      only_path: false
+      protocol: 'http'
+    delivery_method: :file
+    smtp_settings: {}
+  from_email_address: <%= ENV['FROM_EMAIL_ADDRESS'] %>
+
+development:
+  <<: *defaults
+  email_url_host_name: 'localhost:3000'
+  from_email_address: 'from@example.com'
+
+test:
+  <<: *defaults
+  email_url_host_name: 'localhost:3000'
+  from_email_address: 'text@example.com'
+
+production:
+  <<: *defaults
+  action_mailer:
+    asset_host: <%= "http://#{ENV['EMAIL_URL_HOST_NAME']}" %>
+    default_url_options:
+      host: <%= ENV['EMAIL_URL_HOST_NAME'] %>
+      only_path: false
+      protocol: 'http'
+    delivery_method: :smtp
+    smtp_settings:
+      address: 'smtp.sendgrid.net'
+      authentication: :plain
+      domain: 'heroku.com'
+      enable_starttls_auto: true
+      password: <%= ENV['SENDGRID_PASSWORD'] %>
+      port: 587
+      user_name: <%= ENV['SENDGRID_USERNAME'] %>

@@ -1,0 +1,41 @@
+
+  <div class="embedded-form edit-form" id=<%= "edit-form-#{id}" %>>
+    <div class="errors-container">
+      <h3>On no's! There were some errors:</h3>
+      <ul class="errors-list">
+      </ul>  
+    </div>
+    <% guest = Guest.find(id) %>
+    <%= form_for [:accounts, guest] do |f| %>
+      <%= f.label :first_name %>:
+      <%= f.text_field :first_name, value: guest.first_name %><br />
+
+      <%= f.label :last_name %>:
+      <%= f.text_field :last_name, value: guest.last_name %><br />
+
+      <% if type == "family" %>
+        <%= f.label :age %>
+        <%= f.number_field :age, value: guest.age %><br/ >
+      <% end %>
+
+      <% if type == "me" %>
+        <%= f.label :attending, "Are you still attending?" %><br />
+        <%= f.radio_button :attending, true, checked: guest.attending %>
+        <%= label_tag(:attending_true, "Yes") %>
+        <%= f.radio_button :attending, false, checked: !guest.attending %>
+        <%= label_tag(:attending_false, "No, I am lame.") %><br />
+      <% else %>
+        <%= f.label :attending, "Are they still attending?" %><br />
+        <%= f.radio_button :attending, true, checked: guest.attending %>
+        <%= label_tag(:attending_true, "Yes") %>
+        <%= f.radio_button :attending, false, checked: !guest.attending %>
+        <%= label_tag(:attending_false, "No, they are lame.") %><br />
+      <% end %>
+
+      <%= f.hidden_field :guest_type, value: "#{type}" %><br />
+
+    <% end %>
+    <button class="custom-button edit-form-button-submit" >Update</button>
+    <button class="custom-button edit-form-button-cancel" >Cancel</button>
+    <button class="custom-button edit-form-button-delete" >Delete</button>
+  </div>

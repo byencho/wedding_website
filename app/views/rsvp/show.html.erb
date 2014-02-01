@@ -1,3 +1,18 @@
-<div class="inner-container">
-  <h1>Coming real soon, we promise!</h1>
-</div>
+<%# Note that is currently being tested %>
+<% if false %>
+
+<h1>Coming real soon, we promise!</h1>
+
+<% else %>
+
+<h1 class="content-link"><%= link_to "Sign Up", new_account_registration_path %></h1>
+<br />
+<p>to RSVP</p>
+<br /><br /> 
+<p>-or-</p>
+<br /><br /> 
+<h1 class="content-link"><%= link_to "Sign In", new_account_session_path %></h1>
+<br />
+<p>to check in on some RSVP'ing you've already done</p>
+
+<% end %>

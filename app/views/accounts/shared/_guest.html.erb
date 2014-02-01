@@ -1,0 +1,16 @@
+<div class="saved-guest" id=<%= "saved-guest-#{id}"%> >
+  <div class="guest-info">
+    <% guest = Guest.find(id) %>
+    <% is_attending = guest.attending %>
+    <div class="guest-name">
+      <p><%= guest.name %></p>
+    </div><br />
+    <% if type == "family" %>
+      <p>Age : <%= guest.age %></p><br />
+    <% end%>
+    <p>
+      Attending : <span class=<%= "attending-#{is_attending}" %>><%= is_attending ? "Yes" : "No" %></span>
+    </p>
+  </div>
+  <button class="custom-button edit-button" id=<%= "edit-button-#{id}" %> >Edit</button>
+</div>

@@ -1,0 +1,192 @@
+// TODO Get the right color here to match other uses
+$highlight-color: #00aaff;
+
+//=========================================//
+// Main Styling//
+
+.main .inner-content-accounts {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  //text-align: center;
+}
+
+.main .inner-content-accounts .sign-in-container {
+  margin: 0 auto;
+  width: 250px;
+}
+
+.main .accounts-rsvp {
+  //width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.main .accounts-rsvp hr {
+  margin: 0;
+  padding: 0;
+  height: 0px;
+}
+
+// Maybe don't need this
+.main .inner-container .accounts-rsvp h2 {
+  margin: 5px 0 5px 0;
+}
+
+//=========================================//
+// Form and Form Button Styling //
+
+.main .inner-content-accounts input {
+  font-size: 12pt;
+
+  box-sizing: border-box;
+  -moz-box-sizing: border-box; /* Firefox */
+  border: 1px solid #ffffff;
+  background-color: rgba(255,255,255,0.25);
+
+  height: 2.0em;
+  width: 100%;
+  margin: 5px 0 15px 0;
+  padding: 0 15px 0 15px;
+
+  color: #ffffff;
+}
+
+.main .inner-content-accounts input:focus { 
+  border: 1px solid $highlight-color;
+  box-shadow: 0 0 10px $highlight-color;
+}
+
+.main .inner-content-accounts input[type=radio] {
+  box-sizing: inherit;
+  -moz-box-sizing: inherit; /* Firefox */
+  width: auto;
+
+  border: 0px;
+}
+
+.main .inner-content-accounts input[type=radio]:focus {
+  box-sizing: inherit;
+  border: 0px;
+  box-shadow: none;
+}
+
+.main .inner-content-accounts input[type=submit] {
+  background-color: rgba(0,0,0,0);
+  height: 2.0em;
+  text-transform: uppercase;
+  //margin-top: 15px;
+
+  // Testing
+  box-sizing: inherit;
+  -moz-box-sizing: inherit; /* Firefox */
+  width: auto;
+}
+
+.main .inner-content-accounts input[type=submit]:hover {
+  border-color: $highlight-color;
+  color: $highlight-color;
+}
+
+//=========================================//
+// Embedded Form //
+
+.main .inner-content-accounts .embedded-form {
+  margin-top: 20px;
+  max-width: 300px;
+}
+
+.main .inner-content-accounts .errors-container {
+  display: none;
+}
+
+.main .inner-content-accounts .errors-container h3 {
+  font-size: 14pt;
+  color: #ff0000;
+}
+
+.main .inner-content-accounts .errors-container ul {
+  margin: 10px 20px 10px 20px;
+  list-style-type: circle;
+}
+
+.main .inner-content-accounts .errors-container ul li {
+  color: #ffaaaa;  
+}
+
+//=========================================//
+// Main list buttons //
+
+.main .inner-content-accounts .custom-button {
+  display: inline-block;
+  font-size: 12pt;
+  border: 1px solid #ffffff;
+
+  //height: 2.0em;
+  height: auto;
+  width: auto;
+  margin: 5px 0 15px 0;
+  padding: 10px 15px 10px 15px;
+
+  color: #ffffff;
+
+  background-color: rgba(0,0,0,0);
+  text-transform: uppercase;
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.main .inner-content-accounts .custom-button:hover {
+  border-color: $highlight-color;
+  color: $highlight-color;
+}
+
+
+//=========================================//
+// Guest containers //
+
+.main .inner-content-accounts .guest-container {
+  margin: 10px 10px 0px 10px;
+}
+
+//=========================================//
+// Saved Guest Info //
+
+.main .inner-content-accounts .saved-guest {
+  margin: 10px 0px;
+  padding: 10px 10px;
+  background-color: rgba(255,255,255,0.20);
+  border-radius: 10px;
+}
+
+.main .inner-content-accounts .saved-guest .attending-true {
+  color: #aaffaa;
+}
+
+.main .inner-content-accounts .saved-guest .attending-false {
+  color: #ffaaaa;
+}
+
+.main .inner-content-accounts .saved-guest .guest-name {
+  font-weight: bold;
+}
+
+.main .inner-content-accounts .saved-guest .guest-info {
+  display: inline-block;  
+}
+
+
+//=========================================//
+// Edit Form //
+
+.main .inner-content-accounts .saved-guest .edit-button {
+  display: inline-block;
+  float: right;
+  cursor: pointer;
+}
+
+.main .inner-content-accounts .guest-container .edit-form {
+  display: none;
+}
+
