@@ -142,6 +142,12 @@ $highlight-color: #00aaff;
   color: $highlight-color;
 }
 
+.main .inner-content-accounts .custom-button:disabled {
+  border-color: rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.25);
+  cursor: default;
+}
+
 
 //=========================================//
 // Guest containers //
@@ -186,7 +192,17 @@ $highlight-color: #00aaff;
   cursor: pointer;
 }
 
+
+.main .inner-content-accounts .saved-guest .edit-button:disabled {
+  cursor: default;
+}
+
 .main .inner-content-accounts .guest-container .edit-form {
   display: none;
+  max-width: none;
+  margin: 10px 0px;
+  padding: 10px 10px;
+  background-color: rgba(255,255,255,0.20);
+  border-radius: 10px;
 }
 

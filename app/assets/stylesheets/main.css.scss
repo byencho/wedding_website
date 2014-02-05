@@ -149,9 +149,11 @@ body {
   background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */  
 
   // http://css-tricks.com/snippets/css/css-box-shadow/
+  /*
   -moz-box-shadow:    0px 0px 3px 1px #ccc;
   -webkit-box-shadow: 0px 0px 3px 1px #ccc;
   box-shadow:         0px 0px 3px 1px #ccc;    
+  */
 
   background-color: $header-background-color;
 }
