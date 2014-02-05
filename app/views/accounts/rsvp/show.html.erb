@@ -8,7 +8,8 @@
         <%= render partial: 'accounts/shared/guest', locals: { id: guest_me.id, type: "me" } %>
         <%= render partial: 'accounts/shared/edit_form_shared', locals: { id: guest_me.id, type: "me" } %>
       <% else %>
-        <button class="custom-button" id="rsvp-me-add-button">RSVP</button>
+        <p>This is you. You should RSVP.</p><br />
+        <button class="custom-button add-button" id="rsvp-me-add-button">RSVP</button>
       <% end %>
     </div>
   </div>
@@ -22,7 +23,8 @@
         <%= render partial: 'accounts/shared/guest', locals: { id: guest_date.id, type: "guest" } %>
         <%= render partial: 'accounts/shared/edit_form_shared', locals: { id: guest_date.id, type: "guest" } %>
       <% else %>
-        <button class="custom-button" id="rsvp-guest-add-button">Add</button>
+        <p>Someone else on your invitation? You should RSVP for them here. Otherwise you can leave this blank.</p><br />
+        <button class="custom-button add-button" id="rsvp-guest-add-button">Add</button>
       <% end %>
     </div>
   </div>
@@ -41,8 +43,10 @@
           </li>
         <% end %>        
         </ul>
+      <% else%>
+        <p>Bringing kids? Let it be known! Add them here.</p><br />
       <% end %>
-      <button class="custom-button" id="rsvp-family-add-button">Add</button>
+      <button class="custom-button add-button" id="rsvp-family-add-button">Add</button>
     </div>
   </div>
   <br />
@@ -60,8 +64,10 @@
           </li>
         <% end %>
         </ul>
+      <% else%>
+        <p>Grandma doesn't know what the inter-tubes are? Be a champ and add her here. (This should be pretty rare, so don't be messin' around. Get off my lawn.)</p><br />
       <% end %>
-      <button class="custom-button" id="rsvp-other-add-button">Add</button>
+      <button class="custom-button add-button" id="rsvp-other-add-button">Add</button>
       </div>
   </div>
   <br />   
@@ -74,24 +80,32 @@
     $('#rsvp-me-add-button').click(function() {
       $('#rsvp-me').append("<%= escape_javascript(render :partial => 'accounts/shared/rsvp_form_shared', locals: { account: @account, type: "me" }) %>");
       $('#rsvp-me-add-button').hide();
+      $(".edit-button").attr("disabled", true);
+      $(".add-button").attr("disabled", true);
       return false;
     });
 
     $('#rsvp-guest-add-button').click(function() {
       $('#rsvp-guest').append("<%= escape_javascript(render :partial => 'accounts/shared/rsvp_form_shared', locals: { account: @account, type: "guest" }) %>");
       $('#rsvp-guest-add-button').hide();
+      $(".edit-button").attr("disabled", true);
+      $(".add-button").attr("disabled", true);
       return false;
     });
 
     $('#rsvp-family-add-button').click(function() {
       $('#rsvp-family').append("<%= escape_javascript(render :partial => 'accounts/shared/rsvp_form_shared', locals: { account: @account, type: "family" }) %>");
       $('#rsvp-family-add-button').hide();
+      $(".edit-button").attr("disabled", true);
+      $(".add-button").attr("disabled", true);
       return false;
     });
 
     $('#rsvp-other-add-button').click(function() {
       $('#rsvp-other').append("<%= escape_javascript(render :partial => 'accounts/shared/rsvp_form_shared', locals: { account: @account, type: "other" }) %>");
       $('#rsvp-other-add-button').hide();
+      $(".edit-button").attr("disabled", true);
+      $(".add-button").attr("disabled", true);
       return false;
     });  
   });

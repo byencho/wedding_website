@@ -26,12 +26,15 @@ removeForm = (e) ->
   addButton = $("#rsvp-#{type}-add-button")
   addButton.show()
 
+  $(".edit-button").removeAttr("disabled")
+  $(".add-button").removeAttr("disabled")
+
 submitForm = (e) ->
   e.preventDefault()
 
   # TODO NOTE THAT THIS DOES NOT NECESSARILY DISABLE THE BUTTONS  
   # Temporarily disable all custom buttons
-  $(".custom-button").attr("disabled", true)
+  $(".form-button").attr("disabled", true)
 
   # Get target element and parent (main form)
   button = e.target
@@ -55,7 +58,7 @@ submitForm = (e) ->
     dataType: 'html'
     data: form.serialize()
     error: (jqXHR, textStatus, errorThrown) ->
-      $(".custom-button").removeAttr("disabled")
+      $(".form-button").removeAttr("disabled")
 
       # Show errors list
       errorsContainer.show()
@@ -68,7 +71,7 @@ submitForm = (e) ->
       if results.success
         location.reload();
       else
-        $(".custom-button").removeAttr("disabled")
+        $(".form-button").removeAttr("disabled")
 
         # Show errors list
         errorsContainer.show()
@@ -90,6 +93,7 @@ showEditForm = (e) ->
   # Remove listeners on all edit buttons
   #$('.accounts-rsvp').off('click', '.edit-button') 
   $(".edit-button").attr("disabled", true)
+  $(".add-button").attr("disabled", true)
 
   # Hide current details view
   $("##{savedGuest.id}").hide()
@@ -120,13 +124,14 @@ removeEditForm = (e) ->
   # Add listeners back
   #$('.accounts-rsvp').on('click', '.edit-button', showEditForm) 
   $(".edit-button").removeAttr("disabled")
+  $(".add-button").removeAttr("disabled")
 
 
 submitEditForm = (e) ->
   e.preventDefault()
 
   # Temporarily disable all custom buttons
-  $(".custom-button").attr("disabled", true)
+  $(".form-button").attr("disabled", true)
 
   # Get target element and parent (main form)
   button = e.target
@@ -150,7 +155,7 @@ submitEditForm = (e) ->
     dataType: 'html'
     data: form.serialize()
     error: (jqXHR, textStatus, errorThrown) ->
-      $(".custom-button").removeAttr("disabled")
+      $(".form-button").removeAttr("disabled")
 
       # Show errors list
       errorsContainer.show()
@@ -162,7 +167,7 @@ submitEditForm = (e) ->
       if results.success
         location.reload();
       else
-        $(".custom-button").removeAttr("disabled")
+        $(".form-button").removeAttr("disabled")
 
         # Show errors list
         errorsContainer.show()
