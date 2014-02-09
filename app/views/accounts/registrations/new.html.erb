@@ -1,20 +1,30 @@
-<div class="sign-in-container">
-  <h2>Sign up</h2>
+<div class="sign-in-container-wrapper">
+  <p>
+    OK here's how this works: you'll make <span class="notable">one account per invitation</span> and RSVP for each person you need to with it. Then you can come back and sign in any time before April 25th and make changes if you need to.
+  </p>
+  <br />
+  <p>
+     We know how much people like to fill out forms so try not to have too much fun.
+  </p>
+  <br />
+  <div class="sign-in-container">
+    <h2>Sign up</h2>
 
-  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
 
-    <div><%= f.label :email %><br />
-    <%= f.email_field :email, :autofocus => true %></div>
+      <div><%= f.label :email %>
+      <%= f.email_field :email, :autofocus => true %></div>
 
-    <div><%= f.label :password %><br />
-    <%= f.password_field :password %></div>
+      <div><%= f.label :password %>
+      <%= f.password_field :password %></div>
 
-    <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %></div>
+      <div><%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %></div>
 
-    <div><%= f.submit "Sign up" %></div>
-  <% end %>
+      <div><%= f.submit "Sign up" %></div>
+    <% end %>
 
-  <%= render "accounts/shared/links" %>
+    <%= render "accounts/shared/links" %>
+  </div>
 </div>

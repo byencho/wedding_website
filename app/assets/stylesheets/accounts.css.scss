@@ -11,9 +11,19 @@ $highlight-color: #00aaff;
   //text-align: center;
 }
 
+.main .inner-content-accounts .sign-in-container-wrapper {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
 .main .inner-content-accounts .sign-in-container {
   margin: 0 auto;
   width: 250px;
+}
+
+.main .inner-content-accounts .sign-in-container-wrapper .notable {
+  font-style: italic;
+  color: #ffffff;
 }
 
 .main .accounts-rsvp {
@@ -111,6 +121,27 @@ $highlight-color: #00aaff;
 }
 
 .main .inner-content-accounts .errors-container ul li {
+  color: #ffaaaa;  
+}
+
+//=========================================//
+// Devise error messages //
+
+.main .inner-content-accounts .sign-in-container .field_with_errors {
+  margin: 0;
+}
+
+.main .inner-content-accounts #error_explanation h2 {
+  font-size: 14pt;
+  color: #ff0000;
+}
+
+.main .inner-content-accounts #error_explanation ul {
+  margin: 10px 20px 10px 20px;
+  list-style-type: circle;
+}
+
+.main .inner-content-accounts #error_explanation ul li {
   color: #ffaaaa;  
 }
 
