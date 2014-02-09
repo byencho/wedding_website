@@ -1,7 +1,7 @@
 <div class="accounts-rsvp">
   <div class="guest-type-container">
     <% if @account.guests.empty? %>
-      <p>OK let's do this.</p>
+      <p>OK let's do this! Start by RSVP'ing for yourself, then go down the list and add people as necessary and RSVP for them too. When you're done, sign out and you'll go back to the main page. You can come back at any time before April 25th to change what you have here.</p>
     <% else %>
       <p>Remember to make any changes by April 25th.</p>
     <% end%>
@@ -11,8 +11,10 @@
     <div class="guest-container" id="rsvp-me">
       <% guest_me = @account.guests.where(guest_type: "me").first %>
       <% if guest_me %>
-        <%= render partial: 'accounts/shared/guest', locals: { id: guest_me.id, type: "me" } %>
-        <%= render partial: 'accounts/shared/edit_form_shared', locals: { id: guest_me.id, type: "me" } %>
+        <div class="saved-guest-wrapper">
+          <%= render partial: 'accounts/shared/guest', locals: { id: guest_me.id, type: "me" } %>
+          <%= render partial: 'accounts/shared/edit_form_shared', locals: { id: guest_me.id, type: "me" } %>
+        </div>
       <% else %>
         <p>This is you. You should RSVP.</p><br />
         <button class="custom-button add-button" id="rsvp-me-add-button">RSVP</button>
@@ -26,8 +28,10 @@
     <div class="guest-container" id="rsvp-guest">
       <% guest_date = @account.guests.where(guest_type: "guest").first %>
       <% if guest_date %>
-        <%= render partial: 'accounts/shared/guest', locals: { id: guest_date.id, type: "guest" } %>
-        <%= render partial: 'accounts/shared/edit_form_shared', locals: { id: guest_date.id, type: "guest" } %>
+        <div class="saved-guest-wrapper">
+          <%= render partial: 'accounts/shared/guest', locals: { id: guest_date.id, type: "guest" } %>
+          <%= render partial: 'accounts/shared/edit_form_shared', locals: { id: guest_date.id, type: "guest" } %>
+        </div>
       <% else %>
         <p>Someone else on your invitation (or "Guest")? You should RSVP for them here. Otherwise you can leave this blank.</p><br />
         <button class="custom-button add-button" id="rsvp-guest-add-button">Add</button>
@@ -44,8 +48,10 @@
         <ul>
         <% guest_children.each do |child| %>
           <li>
-            <%= render partial: 'accounts/shared/guest', locals: { id: child.id, type: "family" } %>
-            <%= render partial: 'accounts/shared/edit_form_shared', locals: { id: child.id, type: "family" } %>
+            <div class="saved-guest-wrapper">
+              <%= render partial: 'accounts/shared/guest', locals: { id: child.id, type: "family" } %>
+              <%= render partial: 'accounts/shared/edit_form_shared', locals: { id: child.id, type: "family" } %>
+            </div>  
           </li>
         <% end %>        
         </ul>
@@ -65,8 +71,10 @@
         <ul>
         <% guest_other.each do |other_guest| %>
           <li>
-            <%= render partial: 'accounts/shared/guest', locals: { id: other_guest.id, type: "other" } %>
-            <%= render partial: 'accounts/shared/edit_form_shared', locals: { id: other_guest.id, type: "other" } %>
+            <div class="saved-guest-wrapper">
+              <%= render partial: 'accounts/shared/guest', locals: { id: other_guest.id, type: "other" } %>
+              <%= render partial: 'accounts/shared/edit_form_shared', locals: { id: other_guest.id, type: "other" } %>
+            </div>  
           </li>
         <% end %>
         </ul>

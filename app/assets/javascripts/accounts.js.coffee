@@ -95,12 +95,9 @@ showEditForm = (e) ->
   $(".edit-button").attr("disabled", true)
   $(".add-button").attr("disabled", true)
 
-  # Hide current details view
-  $("##{savedGuest.id}").hide()
-
-  # Find appropriate edit form and show it
+  # Find appropriate edit form and show it (by sliding in)
   guestId = savedGuest.id.replace "saved-guest-", ""
-  $("#edit-form-#{guestId}").show()
+  $("#edit-form-#{guestId}").slideDown();
 
 removeEditForm = (e) ->
   e.preventDefault()
@@ -115,14 +112,13 @@ removeEditForm = (e) ->
 
   # Hide form
   embeddedFormId = embeddedForm.id
-  $("##{embeddedFormId}").hide()
+  $("##{embeddedFormId}").slideUp();
 
   # Show the details again for that guest
   guestId = embeddedFormId.replace "edit-form-", ""
   $("#saved-guest-#{guestId}").show()
 
   # Add listeners back
-  #$('.accounts-rsvp').on('click', '.edit-button', showEditForm) 
   $(".edit-button").removeAttr("disabled")
   $(".add-button").removeAttr("disabled")
 

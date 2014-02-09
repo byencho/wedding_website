@@ -16,14 +16,18 @@ $highlight-color: #00aaff;
   max-width: 500px;
 }
 
-.main .inner-content-accounts .sign-in-container {
-  margin: 0 auto;
-  width: 250px;
-}
-
 .main .inner-content-accounts .sign-in-container-wrapper .notable {
   font-style: italic;
   color: #ffffff;
+}
+
+.main .inner-content-accounts .italic {
+  font-style: italic;
+}
+
+.main .inner-content-accounts .sign-in-container {
+  margin: 0 auto;
+  width: 250px;
 }
 
 .main .accounts-rsvp {
@@ -209,13 +213,14 @@ $highlight-color: #00aaff;
 //=========================================//
 // Saved Guest Info //
 
-.main .inner-content-accounts .saved-guest {
-  //display: block;
+.main .inner-content-accounts .saved-guest-wrapper {
   margin: 10px 0px;
   padding: 10px 10px;
   background-color: rgba(255,255,255,0.20);
   border-radius: 10px;
   overflow: hidden;
+}
+.main .inner-content-accounts .saved-guest {
 }
 
 .main .inner-content-accounts .saved-guest .attending-true {
@@ -252,10 +257,6 @@ $highlight-color: #00aaff;
 .main .inner-content-accounts .guest-container .edit-form {
   display: none;
   max-width: none;
-  margin: 10px 0px;
-  padding: 10px 10px;
-  background-color: rgba(255,255,255,0.20);
-  border-radius: 10px;
 }
 
 
@@ -273,7 +274,8 @@ $highlight-color: #00aaff;
   color: #ffffff;
 }
 
-
+//=========================================//
+// Miscellaneous //
 
 
 
