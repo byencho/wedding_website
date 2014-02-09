@@ -17,7 +17,8 @@
         </div>
       <% else %>
         <p>This is you. You should RSVP.</p><br />
-        <button class="custom-button add-button" id="rsvp-me-add-button">RSVP</button>
+        <%= render :partial => 'accounts/shared/rsvp_form_shared', locals: { account: @account, type: "me" } %>
+        <button class="custom-button add-button" id="rsvp-add-button-me">RSVP</button>
       <% end %>
     </div>
   </div>
@@ -34,7 +35,8 @@
         </div>
       <% else %>
         <p>Someone else on your invitation (or "Guest")? You should RSVP for them here. Otherwise you can leave this blank.</p><br />
-        <button class="custom-button add-button" id="rsvp-guest-add-button">Add</button>
+        <%= render :partial => 'accounts/shared/rsvp_form_shared', locals: { account: @account, type: "guest" } %>
+        <button class="custom-button add-button" id="rsvp-add-button-guest">Add</button>
       <% end %>
     </div>
   </div>
@@ -58,7 +60,8 @@
       <% else%>
         <p>Bringing kids? Let it be known! Add them here.</p><br />
       <% end %>
-      <button class="custom-button add-button" id="rsvp-family-add-button">Add</button>
+      <%= render :partial => 'accounts/shared/rsvp_form_shared', locals: { account: @account, type: "family" } %>
+      <button class="custom-button add-button" id="rsvp-add-button-family">Add</button>
     </div>
   </div>
   <br />
@@ -81,48 +84,11 @@
       <% else%>
         <p>Grandma doesn't know what the inter-tubes are? Be a champ and add her here.</p><br />
       <% end %>
-      <button class="custom-button add-button" id="rsvp-other-add-button">Add</button>
+      <%= render :partial => 'accounts/shared/rsvp_form_shared', locals: { account: @account, type: "other" } %>
+      <button class="custom-button add-button" id="rsvp-add-button-other">Add</button>
       </div>
   </div>
   <br />   
   <div class="content-link content-link-margin"><%= link_to "Having trouble?", accounts_trouble_path %></div>
   <div class="content-link content-link-margin"><%= link_to "Sign Out", destroy_account_session_path %></div>
 </div>
-
-<%# Any button clicks that append partials must be placed here (cannot be placed in assets folder) %>
-<%= javascript_tag do %>
-  $(function() {
-    $('#rsvp-me-add-button').click(function() {
-      $('#rsvp-me').append("<%= escape_javascript(render :partial => 'accounts/shared/rsvp_form_shared', locals: { account: @account, type: "me" }) %>");
-      $('#rsvp-me-add-button').hide();
-      $(".edit-button").attr("disabled", true);
-      $(".add-button").attr("disabled", true);
-      return false;
-    });
-
-    $('#rsvp-guest-add-button').click(function() {
-      $('#rsvp-guest').append("<%= escape_javascript(render :partial => 'accounts/shared/rsvp_form_shared', locals: { account: @account, type: "guest" }) %>");
-      $('#rsvp-guest-add-button').hide();
-      $(".edit-button").attr("disabled", true);
-      $(".add-button").attr("disabled", true);
-      return false;
-    });
-
-    $('#rsvp-family-add-button').click(function() {
-      $('#rsvp-family').append("<%= escape_javascript(render :partial => 'accounts/shared/rsvp_form_shared', locals: { account: @account, type: "family" }) %>");
-      $('#rsvp-family-add-button').hide();
-      $(".edit-button").attr("disabled", true);
-      $(".add-button").attr("disabled", true);
-      return false;
-    });
-
-    $('#rsvp-other-add-button').click(function() {
-      $('#rsvp-other').append("<%= escape_javascript(render :partial => 'accounts/shared/rsvp_form_shared', locals: { account: @account, type: "other" }) %>");
-      $('#rsvp-other-add-button').hide();
-      $(".edit-button").attr("disabled", true);
-      $(".add-button").attr("disabled", true);
-      return false;
-    });  
-  });
-<% end %>
-

@@ -1,6 +1,5 @@
 $(document).ready ->
-  #$('#rsvp-me').on('click', '#rsvp-me-cancel-button', removeAddMeForm)  
-  #$('#rsvp-me').on('click', '#rsvp-me-submit-button', submitAddMeForm)
+  $('.accounts-rsvp').on('click', '.add-button', showForm) 
   $('.accounts-rsvp').on('click', '.form-button-cancel', removeForm)  
   $('.accounts-rsvp').on('click', '.form-button-submit', submitForm)
   $('.accounts-rsvp').on('click', '.edit-button', showEditForm) 
@@ -8,7 +7,22 @@ $(document).ready ->
   $('.accounts-rsvp').on('click', '.edit-form-button-submit', submitEditForm)
   $('.accounts-rsvp').on('click', '.edit-form-button-delete', submitEditFormDelete)
 
-# Add a change listener to disable other "EDIT" buttons if one is currently open
+showForm = (e) ->
+  e.preventDefault()
+
+  # Get target element and parent (main form)
+  button = e.target
+  savedGuest = button.parentNode
+
+  # Remove listeners on all buttons
+  $(".edit-button").attr("disabled", true)
+  $(".add-button").attr("disabled", true)
+
+  # Find appropriate for and show it (by sliding in)
+  guestType = button.id.replace "rsvp-add-button-", ""
+  $("#embedded-form-#{guestType}").slideDown();
+
+  $("##{button.id}").fadeOut();
 
 removeForm = (e) ->
   e.preventDefault()
@@ -21,10 +35,9 @@ removeForm = (e) ->
   formId = embeddedForm.id
   type = formId.replace "embedded-form-", ""
 
-  # Hide button and remove form
-  embeddedForm.remove()
-  addButton = $("#rsvp-#{type}-add-button")
-  addButton.show()
+  # Remove form and show buttons
+  $("##{embeddedForm.id}").slideUp();
+  $("#rsvp-add-button-#{type}").fadeIn();
 
   $(".edit-button").removeAttr("disabled")
   $(".add-button").removeAttr("disabled")
@@ -32,7 +45,6 @@ removeForm = (e) ->
 submitForm = (e) ->
   e.preventDefault()
 
-  # TODO NOTE THAT THIS DOES NOT NECESSARILY DISABLE THE BUTTONS  
   # Temporarily disable all custom buttons
   $(".form-button").attr("disabled", true)
 
@@ -84,14 +96,11 @@ submitForm = (e) ->
 showEditForm = (e) ->
   e.preventDefault()
 
-  # Check if this button is disabled...
-
   # Get target element and parent (main form)
   button = e.target
   savedGuest = button.parentNode
 
   # Remove listeners on all edit buttons
-  #$('.accounts-rsvp').off('click', '.edit-button') 
   $(".edit-button").attr("disabled", true)
   $(".add-button").attr("disabled", true)
 
