@@ -14,7 +14,7 @@
       <%= f.text_field :last_name, value: guest.last_name %><br />
 
       <% if type == "family" %>
-        <%= f.label :age %>
+        <%= f.label :age, "Age (0 - 18)" %>
         <%= f.number_field :age, value: guest.age %><br/ >
       <% end %>
 

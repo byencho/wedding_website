@@ -5,13 +5,18 @@ class Guest < ActiveRecord::Base
   validates :last_name, presence: true, length: { minimum: 2 } 
   #validates :age, numericality: true
   validates :guest_type, presence: true
+  validates :age, numericality: { only_integer: true, greater_than: 0, less_than: 18}, if: :is_family?
   validate :name_uniqueness
   validate :type_uniqueness
-  validate :age_if_child
+  #validate :age_if_child
   before_validation :strip_whitespace  
 
   def name
     "#{self.first_name} #{self.last_name}"
+  end
+
+  def is_family?
+    self.guest_type == "family"
   end
 
   private
@@ -39,6 +44,7 @@ class Guest < ActiveRecord::Base
     end
   end
 
+=begin
   def age_if_child    
     if self.guest_type == "family"
       puts " "
@@ -52,5 +58,6 @@ class Guest < ActiveRecord::Base
       end        
     end
   end
+=end  
 
 end
