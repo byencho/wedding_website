@@ -210,10 +210,12 @@ $highlight-color: #00aaff;
 // Saved Guest Info //
 
 .main .inner-content-accounts .saved-guest {
+  //display: block;
   margin: 10px 0px;
   padding: 10px 10px;
   background-color: rgba(255,255,255,0.20);
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .main .inner-content-accounts .saved-guest .attending-true {
@@ -229,7 +231,7 @@ $highlight-color: #00aaff;
 }
 
 .main .inner-content-accounts .saved-guest .guest-info {
-  display: inline-block;  
+  display: inline-block;
 }
 
 

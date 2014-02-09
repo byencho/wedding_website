@@ -18,8 +18,9 @@ WeddingWebsite::Application.routes.draw do
   devise_for :accounts, :sign_out_via => [:get, :delete]
   namespace :accounts do
     root to: 'rsvp#show'
-    resource :rsvp, controller: :rsvp, only: [:show]
+    resource :rsvp, controller: :rsvp, only: [:show]    
     resources :guests, only: [:create, :update, :destroy]
+    resource :trouble, controller: :trouble, only: [:show]
   end
 
 end
