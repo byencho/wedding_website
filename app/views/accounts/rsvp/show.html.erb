@@ -1,5 +1,11 @@
 <div class="accounts-rsvp">
   <div class="guest-type-container">
+    <% if @account.guests.empty? %>
+      <p>OK let's do this.</p>
+    <% else %>
+      <p>Remember to make any changes by April 25th.</p>
+    <% end%>
+    <br />
     <h2>Me</h2>
     <hr />
     <div class="guest-container" id="rsvp-me">
@@ -23,7 +29,7 @@
         <%= render partial: 'accounts/shared/guest', locals: { id: guest_date.id, type: "guest" } %>
         <%= render partial: 'accounts/shared/edit_form_shared', locals: { id: guest_date.id, type: "guest" } %>
       <% else %>
-        <p>Someone else on your invitation? You should RSVP for them here. Otherwise you can leave this blank.</p><br />
+        <p>Someone else on your invitation (or "Guest")? You should RSVP for them here. Otherwise you can leave this blank.</p><br />
         <button class="custom-button add-button" id="rsvp-guest-add-button">Add</button>
       <% end %>
     </div>
@@ -65,7 +71,7 @@
         <% end %>
         </ul>
       <% else%>
-        <p>Grandma doesn't know what the inter-tubes are? Be a champ and add her here. (This should be pretty rare, so don't be messin' around. Get off my lawn.)</p><br />
+        <p>Grandma doesn't know what the inter-tubes are? Be a champ and add her here.</p><br />
       <% end %>
       <button class="custom-button add-button" id="rsvp-other-add-button">Add</button>
       </div>

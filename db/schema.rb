@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20140126194431) do
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "age"
+    t.string   "song",       :default => ""
     t.string   "guest_type", :default => "me", :null => false
     t.boolean  "attending",  :default => true, :null => false
     t.datetime "created_at",                   :null => false

@@ -5,6 +5,7 @@ class CreateGuests < ActiveRecord::Migration
       t.string :first_name
       t.string :last_name
       t.integer :age
+      t.string :song, default: ""      
       t.string :guest_type, null: false, default: "me"
       t.boolean :attending, null: false, default: true
       t.timestamps

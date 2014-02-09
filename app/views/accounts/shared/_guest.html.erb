@@ -11,6 +11,9 @@
     <p>
       Attending : <span class=<%= "attending-#{is_attending}" %>><%= is_attending ? "Yes" : "No" %></span>
     </p>
+    <% if is_attending && !guest.song.empty? %>
+      <p>Song : <%= guest.song %></p><br />
+    <% end%>
   </div>
   <button class="custom-button edit-button" id=<%= "edit-button-#{id}" %> >Edit</button>
 </div>
