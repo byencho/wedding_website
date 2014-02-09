@@ -43,6 +43,10 @@ $highlight-color: #00aaff;
   margin: 5px 0 5px 0;
 }
 
+.main .inner-content-accounts .content-link-margin {
+  margin: 10px 0px;
+}
+
 //=========================================//
 // Form and Form Button Styling //
 
@@ -126,6 +130,21 @@ $highlight-color: #00aaff;
 
 //=========================================//
 // Devise error messages //
+
+.main .inner-content-accounts #flash_error {
+  margin: 10px 0px 10px 0px;
+  color: #ffaaaa;  
+}
+
+.main .inner-content-accounts #flash_alert {
+  margin: 10px 0px 10px 0px;
+  color: #ffaaaa;  
+}
+
+.main .inner-content-accounts #flash_notice {
+  margin: 10px 0px 10px 0px;
+  color: #aaffaa;  
+}
 
 .main .inner-content-accounts .sign-in-container .field_with_errors {
   margin: 0;

@@ -1,19 +1,26 @@
 <div class="sign-in-container">
+  <%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
+  <%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
+  <%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
+
   <h2>Sign in</h2>
 
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-    <div><%= f.label :email %><br />
+
+    <div><%= f.label :email %>
     <%= f.email_field :email, :autofocus => true %></div>
 
-    <div><%= f.label :password %><br />
+    <div><%= f.label :password %>
     <%= f.password_field :password %></div>
 
     <% if devise_mapping.rememberable? -%>
       <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
     <% end -%>
 
-    <div><%= f.submit "Sign in" %></div>
+    <div><%= f.submit "Sign In" %></div>
   <% end %>
 
+  <br />
   <%= render "accounts/shared/links" %>
+  <div class="content-link content-link-margin"><%= link_to "Go Home", home_path %></div>
 </div>

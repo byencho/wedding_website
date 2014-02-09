@@ -8,10 +8,12 @@
   </p>
   <br />
   <div class="sign-in-container">
+
+    <%= devise_error_messages! %>
+
     <h2>Sign up</h2>
 
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
 
       <div><%= f.label :email %>
       <%= f.email_field :email, :autofocus => true %></div>
@@ -22,9 +24,11 @@
       <div><%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation %></div>
 
-      <div><%= f.submit "Sign up" %></div>
+      <div><%= f.submit "Sign Up" %></div>
     <% end %>
 
+    <br />
     <%= render "accounts/shared/links" %>
+    <div class="content-link content-link-margin"><%= link_to "Go Home", home_path %></div>
   </div>
 </div>
