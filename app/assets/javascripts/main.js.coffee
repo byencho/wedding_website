@@ -1,6 +1,8 @@
 $(document).ready ->
 
-  $('#nav-button').click ->
+  $('#nav-button').click (e) ->
+    e.preventDefault()
+
     # Find dropdown navigation
     dropdownNav = $("#dropdown-nav")
 
