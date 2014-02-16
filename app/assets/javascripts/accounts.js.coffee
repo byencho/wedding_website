@@ -6,6 +6,7 @@ $(document).ready ->
   $('.accounts-rsvp').on('click', '.edit-form-button-cancel', removeEditForm)  
   $('.accounts-rsvp').on('click', '.edit-form-button-submit', submitEditForm)
   $('.accounts-rsvp').on('click', '.edit-form-button-delete', submitEditFormDelete)
+  $('.custom-button').removeAttr("disabled")
 
 showForm = (e) ->
   e.preventDefault()

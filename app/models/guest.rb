@@ -5,7 +5,7 @@ class Guest < ActiveRecord::Base
   validates :last_name, presence: true, length: { minimum: 2 } 
   #validates :age, numericality: true
   validates :guest_type, presence: true
-  validates :age, numericality: { only_integer: true, greater_than: 0, less_than: 18}, if: :is_family?
+  validates :age, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 18}, if: :is_family?
   validate :name_uniqueness
   validate :type_uniqueness
   #validate :age_if_child
