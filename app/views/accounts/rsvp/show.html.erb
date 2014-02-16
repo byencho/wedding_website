@@ -34,7 +34,7 @@
           <%= render partial: 'accounts/shared/edit_form_shared', locals: { id: guest_date.id, type: "guest" } %>
         </div>
       <% else %>
-        <p>Someone else on your invitation (or "Guest")? You should RSVP for them here. Otherwise you can leave this blank.</p><br />
+        <p>Someone else on your invitation? You should RSVP for them here. Otherwise you can leave this blank.</p><br />
         <%= render :partial => 'accounts/shared/rsvp_form_shared', locals: { account: @account, type: "guest" } %>
         <button class="custom-button add-button" id="rsvp-add-button-guest">Add</button>
       <% end %>
