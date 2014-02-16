@@ -1,6 +1,13 @@
 // TODO Get the right color here to match other uses
 $highlight-color: #00aaff;
 
+
+$translucent-light-gray-backup: rgb(50,50,120);
+$translucent-light-gray: rgba(255,255,255,0.25);
+
+$guest-background-backup: rgb(50,50,120);
+$guest-background: rgba(255,255,255,0.20);
+
 //=========================================//
 // Main Styling//
 
@@ -60,7 +67,8 @@ $highlight-color: #00aaff;
   box-sizing: border-box;
   -moz-box-sizing: border-box; /* Firefox */
   border: 1px solid #ffffff;
-  background-color: rgba(255,255,255,0.25);
+  background-color: $translucent-light-gray-backup;
+  background-color: $translucent-light-gray;
 
   height: 2.0em;
   width: 100%;
@@ -90,7 +98,7 @@ $highlight-color: #00aaff;
 }
 
 .main .inner-content-accounts input[type=submit] {
-  background-color: rgba(0,0,0,0);
+  background-color: transparent;
   height: 2.0em;
   text-transform: uppercase;
   //margin-top: 15px;
@@ -185,7 +193,7 @@ $highlight-color: #00aaff;
 
   color: #ffffff;
 
-  background-color: rgba(0,0,0,0);
+  background-color: transparent;
   text-transform: uppercase;
   text-decoration: none;
 
@@ -198,8 +206,10 @@ $highlight-color: #00aaff;
 }
 
 .main .inner-content-accounts .custom-button:disabled {
-  border-color: rgba(255,255,255,0.25);
-  color: rgba(255,255,255,0.25);
+  border-color: $translucent-light-gray-backup;
+  border-color: $translucent-light-gray;
+  color: $translucent-light-gray-backup;
+  color: $translucent-light-gray;  
   cursor: default;
 }
 
@@ -217,7 +227,8 @@ $highlight-color: #00aaff;
 .main .inner-content-accounts .saved-guest-wrapper {
   margin: 10px 0px;
   padding: 10px 10px;
-  background-color: rgba(255,255,255,0.20);
+  background-color: $guest-background-backup;
+  background-color: $guest-background;
   border-radius: 10px;
   overflow: hidden;
 }

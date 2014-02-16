@@ -89,10 +89,14 @@ table {
 //=========================================//
 // Variables and Themes //
 
+$translucent-white-backup: rgb(50,50,120);
+$translucent-gray-backup: rgb(50,50,120);
+
 $translucent-white: rgba(255,255,255,0.90);
 $translucent-gray: rgba(255,255,255,0.75);
 
 // Dark Theme
+$header-background-color-backup: rgb(25,25,75);
 $header-background-color: rgba(25,25,75,0.80);
 $main-background-image: url("bg_layer_1_a.png") 50% 0 repeat fixed;
 
@@ -116,6 +120,7 @@ body {
   font-family: 'Lato', sans-serif;
 
   font-weight: lighter;
+  color: $translucent-gray-backup;
   color: $translucent-gray;
   background: #000000;
 }
@@ -155,6 +160,7 @@ body {
   box-shadow:         0px 0px 3px 1px #ccc;    
   */
 
+  background-color: $header-background-color-backup;
   background-color: $header-background-color;
 }
 
@@ -166,7 +172,9 @@ body {
   position: fixed;
   padding: 10px 0px 0px 0px;
   width: 100%;
+  color: $translucent-white-backup;
   color: $translucent-white;
+  background-color: $header-background-color-backup;
   background-color: $header-background-color;
   z-index:1000;   
 }
@@ -220,7 +228,9 @@ body {
 .main .dropdown-nav {
   display: none;
   visibility: hidden;
+  color: $translucent-white-backup;
   color: $translucent-white;
+  background-color: $header-background-color-backup;
   background-color: $header-background-color;
 }
 
@@ -262,7 +272,8 @@ body {
 .main .dropdown-nav a {
   text-decoration: none;
   text-align: center;
-  font-size: 15pt;
+  font-size: 15pt;  
+  color: $translucent-white-backup;
   color: $translucent-white;
   transition: color .25s ease-in-out;
   -ms-transition: color .25s ease-in-out;
@@ -285,6 +296,7 @@ body {
   position: fixed;
   width: 200px;
   margin-left: 10px;
+  color: $translucent-white-backup;
   color: $translucent-white;
 }
 
@@ -303,6 +315,7 @@ body {
   text-decoration: none;
   text-align: center;
   font-size: 15pt;
+  color: $translucent-white-backup;  
   color: $translucent-white;
   transition: color .25s ease-in-out;
   -ms-transition: color .25s ease-in-out;
@@ -438,6 +451,7 @@ body {
   font-size: 15pt;
   text-align: center;
   text-decoration: none;
+  color: $translucent-white-backup;
   color: $translucent-white;
   margin: 2px auto;
 }
@@ -458,6 +472,7 @@ body {
 
 .main .map .map-link a {
   text-decoration: none;
+  color: $translucent-white-backup;  
   color: $translucent-white;
   transition: color .25s ease-in-out;
   -ms-transition: color .25s ease-in-out;
