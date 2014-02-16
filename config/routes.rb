@@ -23,4 +23,12 @@ WeddingWebsite::Application.routes.draw do
     resource :trouble, controller: :trouble, only: [:show]
   end
 
+  # Admins
+  devise_for :admin, :sign_out_via => [:get, :delete]
+  namespace :admin do
+    root to: 'guests#index'
+    resources :guests, only: [:index]
+    resources :accounts, only: [:index]
+  end
+
 end

@@ -21,6 +21,9 @@
             <% if current_account %>
               <div class="content-link sign-out-button"><%= link_to "Sign Out", destroy_account_session_path %></div>
             <% end%>
+            <% if current_admin %>
+              <div class="content-link sign-out-button"><%= link_to "Sign Out", destroy_admin_session_path %></div>
+            <% end%>            
             <hr>
           </div>
           <div class="main-content">

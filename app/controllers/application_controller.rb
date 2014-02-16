@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   def layout_by_resource
     if devise_controller? && resource_name == :account
       "accounts"
+    elsif devise_controller? && resource_name == :admin
+      "accounts"
     else
       "application"
     end

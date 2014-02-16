@@ -12,8 +12,8 @@
       <% guest_me = @account.guests.where(guest_type: "me").first %>
       <% if guest_me %>
         <div class="saved-guest-wrapper">
-          <%= render partial: 'accounts/shared/guest', locals: { id: guest_me.id, type: "me" } %>
-          <%= render partial: 'accounts/shared/edit_form_shared', locals: { id: guest_me.id, type: "me" } %>
+          <%= render partial: 'accounts/shared/guest', locals: { guest: guest_me } %>
+          <%= render partial: 'accounts/shared/edit_form_shared', locals: { guest: guest_me } %>
         </div>
       <% else %>
         <p>This is you. You should RSVP.</p><br />
@@ -30,8 +30,8 @@
       <% guest_date = @account.guests.where(guest_type: "guest").first %>
       <% if guest_date %>
         <div class="saved-guest-wrapper">
-          <%= render partial: 'accounts/shared/guest', locals: { id: guest_date.id, type: "guest" } %>
-          <%= render partial: 'accounts/shared/edit_form_shared', locals: { id: guest_date.id, type: "guest" } %>
+          <%= render partial: 'accounts/shared/guest', locals: { guest: guest_date } %>
+          <%= render partial: 'accounts/shared/edit_form_shared', locals: { guest: guest_date } %>
         </div>
       <% else %>
         <p>Someone else on your invitation? You should RSVP for them here. Otherwise you can leave this blank.</p><br />
@@ -51,8 +51,8 @@
         <% guest_children.each do |child| %>
           <li>
             <div class="saved-guest-wrapper">
-              <%= render partial: 'accounts/shared/guest', locals: { id: child.id, type: "family" } %>
-              <%= render partial: 'accounts/shared/edit_form_shared', locals: { id: child.id, type: "family" } %>
+              <%= render partial: 'accounts/shared/guest', locals: { guest: child } %>
+              <%= render partial: 'accounts/shared/edit_form_shared', locals: { guest: child } %>
             </div>  
           </li>
         <% end %>        
@@ -75,8 +75,8 @@
         <% guest_other.each do |other_guest| %>
           <li>
             <div class="saved-guest-wrapper">
-              <%= render partial: 'accounts/shared/guest', locals: { id: other_guest.id, type: "other" } %>
-              <%= render partial: 'accounts/shared/edit_form_shared', locals: { id: other_guest.id, type: "other" } %>
+              <%= render partial: 'accounts/shared/guest', locals: { guest: other_guest } %>
+              <%= render partial: 'accounts/shared/edit_form_shared', locals: { guest: other_guest } %>
             </div>  
           </li>
         <% end %>

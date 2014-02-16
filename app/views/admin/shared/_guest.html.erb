@@ -2,10 +2,17 @@
   <div class="guest-info">
     <% is_attending = guest.attending %>
     <div class="guest-name">
-      <p><%= guest.name %></p>
+      <% if guest_number %>
+        <p><%= "#{guest_number} : #{guest.name}" %></p>
+      <% else %>
+        <p><%= guest.name %></p>
+      <% end %>
     </div><br />
+    <% if guest.guest_type != "me" %>
+      <p>Type : <%= guest.guest_type %></p>
+    <% end%>
     <% if guest.guest_type == "family" %>
-      <p>Age : <%= guest.age %></p><br />
+      <p>Age : <%= guest.age %></p>
     <% end%>
     <p>
       Attending : <span class=<%= "attending-#{is_attending}" %>><%= is_attending ? "Yes" : "No" %></span>
@@ -14,5 +21,4 @@
       <p>Song : <span class="italic"><%= guest.song %></span></p><br />
     <% end %>
   </div>
-  <button class="custom-button edit-button" id=<%= "edit-button-#{guest.id}" %> >Edit</button>
 </div>

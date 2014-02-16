@@ -1,11 +1,10 @@
 
-  <div class="embedded-form edit-form" id=<%= "edit-form-#{id}" %>>
+  <div class="embedded-form edit-form" id=<%= "edit-form-#{guest.id}" %>>
     <div class="errors-container">
       <h3>On no's! There were some errors:</h3>
       <ul class="errors-list">
       </ul>  
     </div>
-    <% guest = Guest.find(id) %>
     <%= form_for [:accounts, guest] do |f| %>
       <%= f.label :first_name %>:
       <%= f.text_field :first_name, value: guest.first_name %><br />
@@ -13,12 +12,12 @@
       <%= f.label :last_name %>:
       <%= f.text_field :last_name, value: guest.last_name %><br />
 
-      <% if type == "family" %>
+      <% if guest.guest_type == "family" %>
         <%= f.label :age, "Age (0 - 18)" %>
         <%= f.number_field :age, value: guest.age %><br/ >
       <% end %>
 
-      <% if type == "me" %>
+      <% if guest.guest_type == "me" %>
         <%= f.label :attending, "Are you still attending?" %><br />
         <%= f.radio_button :attending, true, checked: guest.attending %>
         <%= label_tag(:attending_true, "Yes") %>
@@ -32,15 +31,15 @@
         <%= label_tag(:attending_false, "No, they are lame.") %><br />
       <% end %>
 
-      <% if type == "me" %>
+      <% if guest.guest_type == "me" %>
         <%= f.label :song, "What's a song you'd like to hear at the wedding? (optional)" %>
         <%= f.text_field :song, value: guest.song %>
-      <% elsif type == "guest" || type == "other" %>
+      <% elsif guest.guest_type == "guest" || guest.guest_type == "other" %>
         <%= f.label :song, "What's a song they'd like to hear at the wedding? (optional)" %>
         <%= f.text_field :song, value: guest.song %>
       <% end %>   
 
-      <%= f.hidden_field :guest_type, value: "#{type}" %><br />
+      <%= f.hidden_field :guest_type, value: "#{guest.guest_type}" %><br />
 
     <% end %>
     <button class="custom-button form-button edit-form-button-submit" >Update</button>
