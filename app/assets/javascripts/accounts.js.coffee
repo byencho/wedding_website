@@ -77,7 +77,7 @@ submitForm = (e) ->
       errorsContainer.show()
 
       # Append new errors to list
-      errorsList.append("<li>Something terrible!</li>")
+      errorsList.append("<li>Something terrible! Please reload the page and try again.</li>")
 
     success: (data, textStatus, jqXHR) ->  
       results = JSON.parse(data)
@@ -166,7 +166,7 @@ submitEditForm = (e) ->
       errorsContainer.show()
 
       # Append new errors to list
-      errorsList.append("<li>Something terrible!</li>")
+      errorsList.append("<li>Something terrible! Please reload the page and try again.</li>")
     success: (data, textStatus, jqXHR) -> 
       results = JSON.parse(data)
       if results.success
@@ -215,7 +215,7 @@ submitEditFormDelete = (e) ->
       errorsContainer.show()
 
       # Append new errors to list
-      errorsList.append("<li>Something terrible!</li>")
+      errorsList.append("<li>Something terrible! Please reload the page and try again.</li>")
     success: (data, textStatus, jqXHR) -> 
       results = JSON.parse(data)
       if results.success
