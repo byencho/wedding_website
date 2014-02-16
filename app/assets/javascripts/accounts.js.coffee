@@ -89,7 +89,6 @@ submitForm = (e) ->
         errorsContainer.show()
 
         # Append new errors to list
-        console.log(errorsList)
         for error in results.message
           errorsList.append("<li>#{error}</li>")
 

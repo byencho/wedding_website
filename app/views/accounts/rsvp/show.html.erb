@@ -45,7 +45,7 @@
     <h2>My Children</h2>
     <hr /> 
     <div class="guest-container" id="rsvp-family">
-      <% guest_children = @account.guests.where(guest_type: "family") %>
+      <% guest_children = @account.guests.where(guest_type: "family").order("LOWER(first_name)") %>
       <% if guest_children.count > 0 %>
         <ul>
         <% guest_children.each do |child| %>
@@ -69,7 +69,7 @@
     <h2>People I'm helping out because it's 2014 and computers scare them</h2>
     <hr />   
     <div class="guest-container" id="rsvp-other">
-      <% guest_other = @account.guests.where(guest_type: "other") %>
+      <% guest_other = @account.guests.where(guest_type: "other").order("LOWER(first_name)") %>
       <% if guest_other.count > 0 %>
         <ul>
         <% guest_other.each do |other_guest| %>
