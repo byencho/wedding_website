@@ -56,16 +56,20 @@ class Accounts::GuestsController < Accounts::AccountsController
   end
 
   def destroy
-    guest = Guest.where(id: params[:id]).first
+    if params[:id]
+      guest = Guest.where(id: params[:id]).first
 
-    if guest.nil?
-      render json: { success: false, message: "Sorry, we couldn't find that guest" }
-    else
-      if guest.destroy
-        render json: { success: true }
+      if guest.nil?
+        render json: { success: false, message: "Sorry, we couldn't find that guest" }
       else
-        render json: { success: false, message: guest.errors.full_messages }
+        if guest.destroy
+          render json: { success: true }
+        else
+          render json: { success: false, message: guest.errors.full_messages }
+        end
       end
+    else 
+      render json: { success: false, message: "Sorry, we couldn't find that guest" }
     end
   end
 

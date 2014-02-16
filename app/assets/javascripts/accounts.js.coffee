@@ -82,7 +82,7 @@ submitForm = (e) ->
     success: (data, textStatus, jqXHR) ->  
       results = JSON.parse(data)
       if results.success
-        location.reload();
+        location.reload(true);
       else
         $(".form-button").removeAttr("disabled")
 
@@ -170,7 +170,7 @@ submitEditForm = (e) ->
     success: (data, textStatus, jqXHR) -> 
       results = JSON.parse(data)
       if results.success
-        location.reload();
+        location.reload(true);
       else
         $(".form-button").removeAttr("disabled")
 
@@ -219,7 +219,7 @@ submitEditFormDelete = (e) ->
     success: (data, textStatus, jqXHR) -> 
       results = JSON.parse(data)
       if results.success
-        location.reload();
+        location.reload(true);
       else
         $(".custom-button").removeAttr("disabled")
 
