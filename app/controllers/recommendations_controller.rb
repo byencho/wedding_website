@@ -1,5 +1,13 @@
 class RecommendationsController < ApplicationController
   def show
-    # static
+  end
+
+  def beer
+  end
+
+  def activities
+  end
+
+  def food
   end
 end

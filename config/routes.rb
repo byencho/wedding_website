@@ -6,13 +6,21 @@ WeddingWebsite::Application.routes.draw do
   resource :faq, controller: :faq, only: [:show]
   resource :guest_book, controller: :guest_book, only: [:show]  
   resource :home, controller: :home, only: [:show]
-  resource :recommendations, controller: :recommendations, only: [:show]
+  resource :recommendations, controller: :recommendations
+  resource :recommendations, controller: :recommendations do
+    member do
+      get "activities"
+      get "beer"
+    end
+  end
   resource :registry, controller: :registry, only: [:show]  
   resource :rsvp, controller: :rsvp, only: [:show]
   resource :schedule, controller: :schedule, only: [:show]
   resource :contact_us, controller: :contact_us, only: [:show]
 
   root to: 'home#show'
+
+  # Recommendations 
 
   # Accounts
   devise_for :accounts, :sign_out_via => [:get, :delete]
