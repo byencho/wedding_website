@@ -10,11 +10,16 @@ class Accounts::GuestsController < Accounts::AccountsController
     guest.last_name = params[:guest][:last_name]
     guest.guest_type = params[:guest][:guest_type]
     guest.attending = params[:guest][:attending]
+
     if params[:guest][:song]
       guest.song = params[:guest][:song]
     end
 
-    if (guest.guest_type == "family")
+    if params[:guest][:title]
+      guest.title = params[:guest][:title]
+    end
+
+    if guest.guest_type == "family"
       guest.age = params[:guest][:age]
     end
 
@@ -39,11 +44,16 @@ class Accounts::GuestsController < Accounts::AccountsController
       guest.last_name = params[:guest][:last_name]
       guest.guest_type = params[:guest][:guest_type]
       guest.attending = params[:guest][:attending]
+
       if params[:guest][:song]
         guest.song = params[:guest][:song]
       end
 
-      if (guest.guest_type == "family")
+      if params[:guest][:title]
+        guest.title = params[:guest][:title]
+      end
+
+      if guest.guest_type == "family"
         guest.age = params[:guest][:age]
       end
 

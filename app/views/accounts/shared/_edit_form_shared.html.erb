@@ -6,6 +6,11 @@
       </ul>  
     </div>
     <%= form_for [:accounts, guest] do |f| %>
+      <% if guest.guest_type != "family" %>
+        <%= f.label :title, "Title (Mr., Ms., etc.)" %>:
+        <%= f.text_field :title, value: guest.title %><br />
+      <% end %>
+
       <%= f.label :first_name %>:
       <%= f.text_field :first_name, value: guest.first_name %><br />
 

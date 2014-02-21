@@ -4,8 +4,13 @@
     <ul class="errors-list">
     </ul>  
   </div>
-  <% @guest = Guest.new(account: @account) %>
-  <%= form_for [:accounts, @guest] do |f| %>
+  <% guest = Guest.new(account: @account) %>
+  <%= form_for [:accounts, guest] do |f| %>
+    <% if type != "family" %>
+      <%= f.label :title, "Title (Mr., Ms., etc.)" %>:
+      <%= f.text_field :title, value: guest.title %><br />
+    <% end %>
+
     <%= f.label :first_name %>:
     <%= f.text_field :first_name %><br />
 
@@ -19,15 +24,15 @@
 
     <% if type == "me" %>
       <%= f.label :attending, "Are you attending?" %><br />
-      <%= f.radio_button :attending, true, checked: @guest.attending %>
+      <%= f.radio_button :attending, true, checked: guest.attending %>
       <%= label_tag(:attending_true, "Yes") %>
-      <%= f.radio_button :attending, false, checked: !@guest.attending %>
+      <%= f.radio_button :attending, false, checked: !guest.attending %>
       <%= label_tag(:attending_false, "No, I am lame.") %><br />
     <% else %>
       <%= f.label :attending, "Are they attending?" %><br />
-      <%= f.radio_button :attending, true, checked: @guest.attending %>
+      <%= f.radio_button :attending, true, checked: guest.attending %>
       <%= label_tag(:attending_true, "Yes") %>
-      <%= f.radio_button :attending, false, checked: !@guest.attending %>
+      <%= f.radio_button :attending, false, checked: !guest.attending %>
       <%= label_tag(:attending_false, "No, they are lame.") %><br />      
     <% end %>
 
