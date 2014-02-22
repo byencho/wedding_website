@@ -294,3 +294,12 @@ $guest-background: rgba(255,255,255,0.20);
   list-style-type: decimal;
 }
 
+.main ul.trouble-list {
+  font-size: 14pt;
+  margin: 10px 20px 10px 20px;
+  list-style-type: circle;
+}
+
+.main ul.trouble-list li {
+  padding: 10px;
+}

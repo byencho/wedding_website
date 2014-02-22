@@ -2,7 +2,15 @@
   <h2>Having trouble?</h2>
   <br />
   <p>
-    Software's hard and sometimes things don't work right. If you're having trouble, just email Brian (<span class="content-link"><%= mail_to "byencho@gmail.com", "byencho@gmail.com", subject: "Wedding Website Trouble" %></span>) and we'll fix the problem. 
+    Software's hard and sometimes things don't work right. First try these two things:
+  </p>
+  <ul class="trouble-list">
+    <li><span class="italic">Use a better browser</span>. Are you using Internet Explorer 7? Netscape Navigator? Don't do that. Use something better, like <span class="content-link"><%= link_to "Google Chrome", "https://www.google.com/intl/en/chrome/browser/?brand=CHMA&utm_campaign=en&utm_source=en-ha-na-us-bk&utm_medium=ha", target: "_blank" %></span>.</li>
+    <li><span class="italic">Turn Javascript back on.</span> If you don't know what that means, then this probably isn't your problem.</li>
+  </ul>
+
+  <p>
+    If you're still having trouble, just email Brian (<span class="content-link"><%= mail_to "byencho@gmail.com", "byencho@gmail.com", subject: "Wedding Website Trouble" %></span>) and we'll fix the problem. 
   </p>
   <br />
   <div class="content-link content-link-margin"><%= link_to "Go Back", accounts_root_path %></div>
