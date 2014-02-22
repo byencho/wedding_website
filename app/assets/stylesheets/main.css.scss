@@ -89,11 +89,19 @@ table {
 //=========================================//
 // Variables and Themes //
 
-$translucent-white-backup: rgb(50,50,120);
-$translucent-gray-backup: rgb(50,50,120);
 
+$translucent-white-backup: rgb(225,225,225);
 $translucent-white: rgba(255,255,255,0.90);
+
+$translucent-gray-backup: rgb(200,200,200);
 $translucent-gray: rgba(255,255,255,0.75);
+
+$h1-color-backup: rgb(255,255,100);
+$h1-color: rgba(255,255,100,0.9);
+
+$h2-color-backup: rgb(255,255,150);
+$h2-color: rgba(255,255,150,0.9);
+
 
 // Dark Theme
 $header-background-color-backup: rgb(25,25,75);
@@ -149,6 +157,7 @@ body {
 }
 
 .outline-box {
+  border: 1px solid $translucent-gray-backup;
   border: 1px solid $translucent-gray;
   -webkit-background-clip: padding-box; /* for Safari */
   background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */  
@@ -364,7 +373,8 @@ body {
   text-align: left;
   font-size: 25pt;
   font-weight: bold;
-  color: rgba(255,255,100,0.9);
+  color: $h1-color-backup;
+  color: $h1-color;
   margin: 0 auto 0 auto;  
 }
 
@@ -372,7 +382,8 @@ body {
   text-align: left;
   font-size: 18pt;
   font-style: italic;
-  color: rgba(255,255,150,0.9);
+  color: $h2-color-backup;
+  color: $h2-color;
   margin: 20px auto 20px auto;  
 }
 
