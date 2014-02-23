@@ -36,6 +36,9 @@
         <%= label_tag(:attending_false, "No, they are lame.") %><br />
       <% end %>
 
+      <%= f.label :diet, "Dietary Restrictions? (optional, ex: vegetarian, gluten free, etc.)" %>:
+      <%= f.text_field :diet, value: guest.diet %><br />
+
       <% if guest.guest_type == "me" %>
         <%= f.label :song, "What's a song you'd like to hear at the wedding? (optional)" %>
         <%= f.text_field :song, value: guest.song %>

@@ -1,8 +1,10 @@
 class Guest < ActiveRecord::Base
   belongs_to :account
 
-  validates :first_name, presence: true, length: { minimum: 2 } 
-  validates :last_name, presence: true, length: { minimum: 2 }   
+  validates :first_name, presence: true, length: { minimum: 2, maximum: 140 } 
+  validates :last_name, presence: true, length: { minimum: 2, maximum: 140 }  
+  validates :diet, length: { maximum: 140 } 
+  validates :title, length: { maximum: 140 } 
   validates :guest_type, presence: true
   validates :age, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 18}, if: :is_family?
   validate :name_uniqueness
@@ -31,7 +33,8 @@ class Guest < ActiveRecord::Base
     end
   end
 
-    def strip_whitespace
+  def strip_whitespace
+    self.diet = self.diet ? self.diet.strip() : ""
     self.title = self.title ? self.title.strip() : ""    
     self.first_name = self.first_name ? self.first_name.strip() : ""
     self.last_name  = self.last_name ? self.last_name.strip() : ""

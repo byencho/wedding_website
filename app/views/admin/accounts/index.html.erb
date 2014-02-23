@@ -1,22 +1,52 @@
 <div class="accounts-rsvp">
   <div class="content-link content-link-margin"><%= link_to "Guests", admin_guests_path %></div>
   <h2>Accounts</h2>
-  <ol>
+  <p>Total accounts : <%= @account_count %></p>
+  <br />
+  <ul>
     <% @accounts.each do |account| %> 
       <li>
         <div class="saved-guest-wrapper">
           <p><%= account.email %></p>
           <ul>
-            <% account.guests.each do |guest| %> 
-              <li>
-                <div class="saved-guest-wrapper">
-                  <%= render partial: 'admin/shared/guest', locals: { guest: guest, guest_number: nil } %>
-                </div>
-              </li>
-            <% end %>   
+            <% me = account.guests.order(:first_name).where(guest_type: "me").first %>
+            <% my_guest = account.guests.order(:first_name).where(guest_type: "guest").first %>
+            <% my_family = account.guests.order(:first_name).where(guest_type: "family") %>
+            <% other = account.guests.order(:first_name).where(guest_type: "other") %>
+
+            <li>
+                <% if me %>
+                  <div class="saved-guest-wrapper">
+                  <%= render partial: 'admin/shared/guest', locals: { guest: me, guest_number: nil } %>
+                  </div>
+                <% end %>
+                <% if my_guest %>
+                  <p>Guest</p>
+                  <div class="saved-guest-wrapper">
+                    <%= render partial: 'admin/shared/guest', locals: { guest: my_guest, guest_number: nil } %>
+                  </div>
+                <% end %>
+                <% if my_family.count > 0 %>
+                  <p>Children</p>
+                  <% my_family.each do |child| %>
+                    <div class="saved-guest-wrapper">
+                      <%= render partial: 'admin/shared/guest', locals: { guest: child, guest_number: nil } %>
+                    </div>  
+                  <% end %>
+                <% end %>
+                <% if other.count > 0 %>
+                  <p>Other</p>
+                  <% other.each do |other_guest| %>
+                    <div class="saved-guest-wrapper">
+                      <%= render partial: 'admin/shared/guest', locals: { guest: other_guest, guest_number: nil } %>
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
+            </li>
           </ul>
         </div>
       </li>
     <% end %>   
-  </ol>
+  </ul>
 </div>

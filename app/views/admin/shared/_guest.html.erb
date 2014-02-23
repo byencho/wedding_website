@@ -8,17 +8,19 @@
         <p><%= guest.name %></p>
       <% end %>
     </div><br />
-    <% if guest.guest_type != "me" %>
-      <p>Type : <%= guest.guest_type %></p>
-    <% end%>
     <% if guest.guest_type == "family" %>
       <p>Age : <%= guest.age %></p>
     <% end%>
     <p>
       Attending : <span class=<%= "attending-#{is_attending}" %>><%= is_attending ? "Yes" : "No" %></span>
     </p>
-    <% if is_attending && !guest.song.blank? %>
-      <p>Song : <span class="italic"><%= guest.song %></span></p><br />
+    <% if is_attending %>
+      <% if !guest.diet.blank? %>
+        <p>Dietary Restrictions: <span class="italic"><%= guest.diet %></span></p>
+      <% end %>
+      <% if !guest.song.blank? %>
+        <p>Song : <span class="italic"><%= guest.song %></span></p><br />
+      <% end %>
     <% end %>
   </div>
 </div>
