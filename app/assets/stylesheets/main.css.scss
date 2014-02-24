@@ -517,10 +517,45 @@ body {
 }
 
 //=========================================//
+// Food //
+
+ul.restaurant-list {
+  display: block;
+  list-style: circle;  
+  margin: 10px 20px 10px 20px;
+}
+
+ul.restaurant-list li {
+  padding: 5px;
+}
+
+ul.restaurant-list h3 {
+  font-size: 15pt;
+  font-style: italic;
+  color: #eeeeee;
+  padding: 5px 0 5px 0;
+}
+
+ul.restaurant-list p {
+  font-size: 13pt;
+  padding: 0 10px 0 10px;
+}
+
+ul.restaurant-list .address {
+  font-size: 11pt;  
+  font-style: italic;
+  padding-top: 5px;
+}
+
+//=========================================//
 // Misc //
 .editors-note {
   font-style: italic;
   color: #aabbee;  
+}
+
+.italic {
+  font-style: italic;  
 }
 
 //=========================================//
