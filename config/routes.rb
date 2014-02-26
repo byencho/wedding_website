@@ -16,6 +16,7 @@ WeddingWebsite::Application.routes.draw do
   resource :registry, controller: :registry, only: [:show]  
   resource :rsvp, controller: :rsvp, only: [:show]
   resource :schedule, controller: :schedule, only: [:show]
+  resource :photos, controller: :photos, only: [:show]
   resource :contact_us, controller: :contact_us, only: [:show]
 
   root to: 'home#show'
