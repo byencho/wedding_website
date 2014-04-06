@@ -44,7 +44,7 @@ class Guest < ActiveRecord::Base
     if self.guest_type == "me" || self.guest_type == "guest"
       self.account.guests.each do |guest|
         if guest.id != self.id && guest.guest_type == self.guest_type
-          errors.add(:type, "#{self.type} is already taken in your account")
+          errors.add(:type, "#{self.guest_type} is already taken in your account")
         end
       end
     end
