@@ -4,9 +4,6 @@ class Account < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation
 
   has_many :guests, dependent: :destroy
-
-  # TODO Decide if :validatable is necessary here
-
   before_validation :downcase_email
 
   def downcase_email
