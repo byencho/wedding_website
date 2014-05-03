@@ -1,9 +1,32 @@
 <div class="accounts-rsvp">
   <div class="content-link content-link-margin"><%= link_to "Accounts", admin_accounts_path %></div>
   <h2>Guests</h2>
-  <p><%= "Total      : #{@guest_count}" %></p>
-  <p><%= "Total cool : #{@coming_count}" %></p>
-  <p><%= "Total lame : #{@not_coming_count}" %></p>
+  <table>
+    <tr>
+      <td>Total</td>
+      <td><%= @guest_count %></td>
+    </tr>
+    <tr>
+      <td>Total cool</td>
+      <td><%= @coming_count %></td>
+    </tr>
+    <tr class="details">
+      <td> - Adults and children 13+</td>
+      <td><%= @coming_count_adults_and_children_13_plus %></td>
+    </tr>
+    <tr class="details">
+      <td> - Children 3 - 12</td>
+      <td><%= @coming_count_children_3_to_12 %></td>
+    </tr>
+    <tr class="details">
+      <td> - Children 0 - 2</td>
+      <td><%= @coming_count_children_0_to_2 %></td>
+    </tr>
+    <tr>
+      <td>Total lame</td>
+      <td><%= @not_coming_count %></td>
+    </tr>
+  </table>
   <br />
   <ul>
     <% guest_number = 1 %>
