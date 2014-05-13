@@ -1,27 +1,34 @@
-<div class="sign-in-container">
-  <%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
-  <%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
-  <%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
-
-  <h2>Sign in</h2>
-
-  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-
-    <div><%= f.label :email %>
-    <%= f.email_field :email, :autofocus => true %></div>
-
-    <div><%= f.label :password %>
-    <%= f.password_field :password %></div>
-
-    <% if devise_mapping.rememberable? -%>
-      <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-    <% end -%>
-
-    <div><%= f.submit "Sign In" %></div>
-  <% end %>
-
+<div class="sign-in-container-wrapper">
+  <p class="warning">STOP!</p>
   <br />
-  <%= render "accounts/shared/links" %>
-  <div class="content-link content-link-margin"><%= link_to "Having Trouble?", accounts_trouble_path %></div>  
-  <div class="content-link content-link-margin"><%= link_to "Go Home", home_path %></div>
+  <p class="warning">
+    It's too late to make any changes! You can look, but if you make changes now we won't see them, so if you MUST change something you better write Sandra at <span class="content-link"><%= mail_to "sundis@gmail.com", "sundis@gmail.com", subject: "Late RSVP changes" %></span> and let her know!</p>
+  <br />
+  <div class="sign-in-container">
+    <%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
+    <%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
+    <%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
+
+    <h2>Sign in</h2>
+
+    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+
+      <div><%= f.label :email %>
+      <%= f.email_field :email, :autofocus => true %></div>
+
+      <div><%= f.label :password %>
+      <%= f.password_field :password %></div>
+
+      <% if devise_mapping.rememberable? -%>
+        <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+      <% end -%>
+
+      <div><%= f.submit "Sign In" %></div>
+    <% end %>
+
+    <br />
+    <%= render "accounts/shared/links" %>
+    <div class="content-link content-link-margin"><%= link_to "Having Trouble?", accounts_trouble_path %></div>  
+    <div class="content-link content-link-margin"><%= link_to "Go Home", home_path %></div>
+  </div>
 </div>

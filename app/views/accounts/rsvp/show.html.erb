@@ -1,10 +1,8 @@
 <div class="accounts-rsvp">
   <div class="guest-type-container">
-    <% if @account.guests.empty? %>
-      <p>OK let's do this! Start by RSVP'ing for yourself, then go down the list and add people as necessary and RSVP for them too. When you're done, sign out and you'll go back to the main page. You can come back at any time before April 25th to change what you have here.</p>
-    <% else %>
-      <p>Remember to make any changes by April 25th.</p>
-    <% end%>
+    <p class="warning">
+      It's too late to make any changes! You can look, but if you make changes now we won't see them, so if you MUST change something you better write Sandra at <span class="content-link"><%= mail_to "sundis@gmail.com", "sundis@gmail.com", subject: "Late RSVP changes" %></span> and let her know!</p>
+    <br />
     <br />
     <h2>Me</h2>
     <hr />

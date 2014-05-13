@@ -1,32 +1,10 @@
 <div class="sign-in-container-wrapper">
-  <p>
-    OK here's how this works: you'll make <span class="notable">one account per invitation</span> and RSVP for each person you need to with it. Then you can come back and sign in any time before <span class="notable">April 25th</span> and make changes if you need to.
-  </p>
+  <p class="warning">STOP!</p>
   <br />
-  <p>
-     We know how much people like to fill out forms so try not to have too much fun.
-  </p>
+  <p class="warning">
+    It's too late to sign up! You missed it! If this is a problem for some reason you can write Sandra at <span class="content-link"><%= mail_to "sundis@gmail.com", "sundis@gmail.com", subject: "Late RSVP changes" %></span>.</p>
   <br />
   <div class="sign-in-container">
-
-    <%= devise_error_messages! %>
-
-    <h2>Sign up</h2>
-
-    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-
-      <div><%= f.label :email %>
-      <%= f.email_field :email, :autofocus => true %></div>
-
-      <div><%= f.label :password %>
-      <%= f.password_field :password %></div>
-
-      <div><%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation %></div>
-
-      <div><%= f.submit "Sign Up" %></div>
-    <% end %>
-
     <br />
     <%= render "accounts/shared/links" %>
     <div class="content-link content-link-margin"><%= link_to "Having Trouble?", accounts_trouble_path %></div>

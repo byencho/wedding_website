@@ -9,7 +9,7 @@ class Guest < ActiveRecord::Base
   validates :age, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 18}, if: :is_family?
   validate :name_uniqueness
   validate :type_uniqueness
-  before_validation :strip_whitespace  
+  before_validation :strip_whitespace
 
   def name
     if self.guest_type != "family" && self.title
